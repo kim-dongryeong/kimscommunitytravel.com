@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>May 2026 Trips – Kim's Community Travel</title>
+  <meta name="description" content="Two government-sponsored overnight trips this May — Seonbi Culture, Chunhyang Festival, Jeonju Hanok Village, Yeoju Bicycle Festival & Seoul Spring Festa. From 10 EUR.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── PROMO HERO ── */
+    .promo-hero {
+      background: var(--dark);
+      color: white;
+      padding: 100px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .promo-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(255,75,0,.18) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 50%, rgba(255,75,0,.12) 0%, transparent 60%);
+    }
+    .promo-hero .container { position: relative; }
+    .promo-hero .section-label { color: #FF4B00; }
+    .promo-hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      color: white;
+      margin: 16px 0 24px;
+      line-height: 1.1;
+    }
+    .promo-hero h1 span { color: #FF4B00; }
+    .promo-hero .lead { color: rgba(255,255,255,.7); max-width: 600px; margin: 0 auto 40px; font-size: 1.15rem; }
+    .promo-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .promo-badge {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: .9rem;
+      color: rgba(255,255,255,.8);
+    }
+    .promo-badge strong { color: white; }
+
+    /* ── TRIP CARDS ── */
+    .promo-trips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (max-width: 720px) { .promo-trips { grid-template-columns: 1fr; } }
+    .promo-trip-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      overflow: hidden;
+      text-align: left;
+      transition: border-color .2s;
+    }
+    .promo-trip-card:hover { border-color: #FF4B00; }
+    .promo-trip-card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .promo-trip-card-body { padding: 28px; }
+    .promo-trip-code {
+      display: inline-block;
+      background: #FF4B00;
+      color: white;
+      font-size: .8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 6px;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .promo-trip-card-body h2 { color: white; font-size: 1.4rem; margin-bottom: 8px; }
+    .promo-trip-date { color: rgba(255,255,255,.5); font-size: .9rem; margin-bottom: 16px; }
+    .promo-trip-highlights { list-style: none; margin-bottom: 24px; }
+    .promo-trip-highlights li {
+      color: rgba(255,255,255,.75);
+      font-size: .95rem;
+      padding: 4px 0;
+    }
+    .promo-trip-highlights li::before { content: '✦ '; color: #FF4B00; }
+    .promo-trip-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px;
+    }
+    .promo-price { color: white; }
+    .promo-price-amount { font-family: var(--font-display); font-size: 2rem; font-weight: 700; line-height: 1; }
+    .promo-price-sub { font-size: .78rem; color: rgba(255,255,255,.4); margin-top: 2px; }
+
+    /* ── DESTINATIONS ── */
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    @media (max-width: 900px) { .dest-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .dest-grid { grid-template-columns: 1fr; } }
+    .dest-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px 24px;
+    }
+    .dest-emoji { font-size: 2.2rem; margin-bottom: 12px; line-height: 1; }
+    .dest-tag {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #FF4B00;
+      margin-bottom: 8px;
+    }
+    .dest-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .dest-card p { font-size: .9rem; color: var(--mid); line-height: 1.6; }
+    .dest-trips {
+      margin-top: 12px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .dest-trip-tag {
+      font-size: .75rem;
+      background: var(--orange-10);
+      color: #FF4B00;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-weight: 600;
+    }
+
+    /* ── INCLUDED ── */
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    @media (max-width: 800px) { .included-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 500px) { .included-grid { grid-template-columns: 1fr; } }
+    .included-item {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--orange-10);
+      border-radius: var(--r);
+    }
+    .included-icon { font-size: 2rem; margin-bottom: 8px; }
+    .included-item h4 { font-size: .95rem; margin-bottom: 4px; }
+    .included-item p { font-size: .82rem; color: var(--mid); }
+
+    /* ── BOOK SECTION ── */
+    .book-section {
+      background: var(--dark);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .book-section h2 { color: white; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 16px; }
+    .book-section p { color: rgba(255,255,255,.6); margin-bottom: 40px; font-size: 1.05rem; }
+    .book-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) { .book-cards { grid-template-columns: 1fr; } }
+    .book-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r-lg);
+      padding: 32px 24px;
+    }
+    .book-card-code { font-size: .8rem; font-weight: 700; color: #FF4B00; letter-spacing: 2px; margin-bottom: 8px; }
+    .book-card h3 { color: white; font-size: 1.1rem; margin-bottom: 4px; }
+    .book-card-date { color: rgba(255,255,255,.45); font-size: .85rem; margin-bottom: 20px; }
+    .book-card .btn { width: 100%; justify-content: center; }
+  </style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpg" alt="Kim's Community Travel">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="house.html">House</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="nav-mobile">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="house.html">House</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="promo-hero">
+  <div class="container">
+    <span class="section-label">Kim's Community Travel · May 2026</span>
+    <h1>Two Trips.<br><span>One Epic Month.</span></h1>
+    <p class="lead">Two government-sponsored overnight trips through Korea's most beautiful festivals — starting from just 10 EUR. Open to all international &amp; exchange students.</p>
+    <div class="promo-badges">
+      <span class="promo-badge">🇰🇷 <strong>Government Sponsored</strong></span>
+      <span class="promo-badge">🚌 <strong>Chartered Bus Included</strong></span>
+      <span class="promo-badge">🛏️ <strong>1 Night + 3 Meals</strong></span>
+      <span class="promo-badge">🌍 <strong>Internationals Only</strong></span>
+    </div>
+
+    <div class="promo-trips">
+
+      <div class="promo-trip-card">
+        <img class="promo-trip-card-img" src="images/n99-poster.svg" alt="N99 trip poster">
+        <div class="promo-trip-card-body">
+          <span class="promo-trip-code">N99</span>
+          <h2>Seonbi Scholars, Chunhyang &amp; Jeonju</h2>
+          <p class="promo-trip-date">📅 May 2–3, 2026 · Sat–Sun</p>
+          <ul class="promo-trip-highlights">
+            <li>UNESCO Buseoksa Temple, Yeongju</li>
+            <li>Seonbi Culture Festival</li>
+            <li>Namwon Chunhyang Festival (evening)</li>
+            <li>Jeonju Hanok Village &amp; Gyeonggijeon</li>
+          </ul>
+          <div class="promo-trip-footer">
+            <div class="promo-price">
+              <div class="promo-price-amount">10 EUR</div>
+              <div class="promo-price-sub">intl students · 20 EUR others</div>
+            </div>
+            <a href="travel/n99-seonbi-chunhyang-jeonju.html" class="btn btn--orange">Details →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="promo-trip-card">
+        <img class="promo-trip-card-img" src="images/n100-poster.svg" alt="N100 trip poster">
+        <div class="promo-trip-card-body">
+          <span class="promo-trip-code">N100</span>
+          <h2>Chunhyang Festival &amp; Yeoju Bicycle Festival</h2>
+          <p class="promo-trip-date">📅 May 4–5, 2026 · Mon–Tue (Golden Week)</p>
+          <ul class="promo-trip-highlights">
+            <li>Namwon Chunhyang Festival + Grand Parade</li>
+            <li>Rural village overnight stay</li>
+            <li>Yeoju Bicycle Festival</li>
+            <li>Seoul Spring Festa (final day)</li>
+          </ul>
+          <div class="promo-trip-footer">
+            <div class="promo-price">
+              <div class="promo-price-amount">10 EUR</div>
+              <div class="promo-price-sub">intl students · 20 EUR others</div>
+            </div>
+            <a href="travel/n100-chunhyang-yeoju-bicycle.html" class="btn btn--orange">Details →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── DESTINATIONS ── -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Where We're Going</span>
+    <h2 class="section-title">Six places, two days each</h2>
+    <p class="section-sub">Korea outside Seoul, as it's meant to be seen.</p>
+
+    <div class="dest-grid">
+
+      <div class="dest-card">
+        <div class="dest-emoji">⛩️</div>
+        <div class="dest-tag">YEONGJU</div>
+        <h3>Buseoksa Temple</h3>
+        <p>A UNESCO World Heritage temple founded in 676 AD on the misty slopes of Sobaeksan. Korea's second-oldest wooden building — nicknamed the "Floating Stone Temple."</p>
+        <div class="dest-trips"><span class="dest-trip-tag">N99</span></div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-emoji">🎓</div>
+        <div class="dest-tag">YEONGJU</div>
+        <h3>Seonbi Culture Festival</h3>
+        <p>Korea's Confucian scholar tradition brought to life — traditional games, hanbok fashion, calligraphy, and festival food. Running May 2–5, you'll catch the opening days.</p>
+        <div class="dest-trips"><span class="dest-trip-tag">N99</span></div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-emoji">🌸</div>
+        <div class="dest-tag">NAMWON</div>
+        <h3>Chunhyang Festival</h3>
+        <p>Korea's oldest festival, in its 96th year. Street parades, pansori performances, fireworks, and a city-wide party built around Korea's most beloved love story. Over a million visitors each year.</p>
+        <div class="dest-trips"><span class="dest-trip-tag">N99</span><span class="dest-trip-tag">N100</span></div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-emoji">🏘️</div>
+        <div class="dest-tag">JEONJU</div>
+        <h3>Hanok Village</h3>
+        <p>700 perfectly preserved traditional houses filling an entire neighbourhood. Birthplace of bibimbap, spiritual home of the Joseon dynasty, and the best hanbok photo spot in Korea.</p>
+        <div class="dest-trips"><span class="dest-trip-tag">N99</span></div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-emoji">🚴</div>
+        <div class="dest-tag">YEOJU</div>
+        <h3>Bicycle Festival</h3>
+        <p>Riverside cycling along one of the most scenic stretches of the Han River path. Food stalls, live music, and easy spring afternoon energy two hours from Seoul.</p>
+        <div class="dest-trips"><span class="dest-trip-tag">N100</span></div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-emoji">🌷</div>
+        <div class="dest-tag">SEOUL</div>
+        <h3>Seoul Spring Festa</h3>
+        <p>26 days of drone light shows, K-pop stages, K-food markets, and the entire city in a good mood. N100 drops you into the final evening — free admission.</p>
+        <div class="dest-trips"><span class="dest-trip-tag">N100</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT'S INCLUDED ── -->
+<section class="section section--tint">
+  <div class="container">
+    <span class="section-label">Both Trips Include</span>
+    <h2 class="section-title">Everything sorted for you</h2>
+    <p class="section-sub">Show up at Yongsan Station. We handle the rest.</p>
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-icon">🚌</div>
+        <h4>Chartered Bus</h4>
+        <p>Round-trip from Yongsan Station Exit 1</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">🛏️</div>
+        <h4>1 Night Stay</h4>
+        <p>Accommodation included both trips</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">🍱</div>
+        <h4>3 Meals</h4>
+        <p>Breakfast, lunch &amp; dinner provided</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon">🎟️</div>
+        <h4>All Entry Fees</h4>
+        <p>Festivals, museums &amp; attractions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOK ── -->
+<section class="book-section">
+  <div class="container">
+    <h2>Ready to go?</h2>
+    <p>Spots are limited. Book now and verify your name on the namelist after.</p>
+    <div class="book-cards">
+      <div class="book-card">
+        <div class="book-card-code">N99</div>
+        <h3>Seonbi, Chunhyang &amp; Jeonju</h3>
+        <p class="book-card-date">May 2–3 · Sat–Sun · 10 EUR</p>
+        <a href="https://forms.gle/UqeBK9evF6sRz1oh8" target="_blank" class="btn btn--orange">Book N99 →</a>
+      </div>
+      <div class="book-card">
+        <div class="book-card-code">N100</div>
+        <h3>Chunhyang &amp; Yeoju Bicycle</h3>
+        <p class="book-card-date">May 4–5 · Mon–Tue · 10 EUR</p>
+        <a href="https://forms.gle/UqeBK9evF6sRz1oh8" target="_blank" class="btn btn--orange">Book N100 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2>Stay in the loop</h2>
+        <p>New trips announced on Instagram first. Follow so you don't miss a spot.</p>
+      </div>
+      <div class="cta-socials">
+        <a href="https://www.instagram.com/kims_community_travel" target="_blank" class="btn btn--white">
+          <img src="images/instagram.png" alt="" style="width:20px;height:20px;">
+          @kims_community_travel
+        </a>
+        <a href="https://www.instagram.com/kims_community_house" target="_blank" class="btn btn--ghost-white">
+          <img src="images/instagram2.png" alt="" style="width:20px;height:20px;">
+          @kims_community_house
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 Kim's Community Travel · Seoul, Korea</p>
+      <p><a href="mailto:kdr@kimscommunitytravel.com" style="color:rgba(255,255,255,.4);">kdr@kimscommunitytravel.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

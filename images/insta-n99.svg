@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#1a1f2e"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF4B00"/>
+      <stop offset="100%" stop-color="#ff7a3d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <circle cx="950" cy="120" r="300" fill="#FF4B00" opacity="0.07"/>
+  <circle cx="80" cy="960" r="240" fill="#FF4B00" opacity="0.05"/>
+
+  <rect x="0" y="0" width="1080" height="7" fill="url(#orange)"/>
+
+  <!-- Header -->
+  <text x="54" y="66" font-family="Georgia, serif" font-size="20" fill="#FF4B00" font-weight="bold" letter-spacing="4">KIM'S COMMUNITY TRAVEL</text>
+  <rect x="54" y="90" width="100" height="34" rx="7" fill="#FF4B00"/>
+  <text x="104" y="114" font-family="Georgia, serif" font-size="20" fill="white" font-weight="bold" text-anchor="middle">N99</text>
+  <rect x="168" y="90" width="250" height="34" rx="7" fill="rgba(255,255,255,0.08)"/>
+  <text x="293" y="114" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" text-anchor="middle">🇰🇷 Gov. Sponsored</text>
+
+  <!-- Title -->
+  <text x="54" y="210" font-family="Georgia, serif" font-size="68" fill="white" font-weight="bold">Seonbi Scholars,</text>
+  <text x="54" y="288" font-family="Georgia, serif" font-size="68" fill="#FF4B00" font-weight="bold">Chunhyang</text>
+  <text x="54" y="366" font-family="Georgia, serif" font-size="68" fill="white" font-weight="bold">&amp; Jeonju</text>
+
+  <rect x="54" y="394" width="60" height="4" rx="2" fill="#FF4B00"/>
+
+  <!-- Date -->
+  <text x="54" y="438" font-family="Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.55)">📅 May 2–3, 2026 · Sat–Sun · 1 Night</text>
+
+  <!-- Destinations row -->
+  <rect x="54" y="470" width="300" height="80" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="204" y="503" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">⛩️ Yeongju</text>
+  <text x="204" y="532" font-family="Arial, sans-serif" font-size="15" fill="rgba(255,255,255,0.4)" text-anchor="middle">Buseoksa · Seonbi Festival</text>
+
+  <rect x="374" y="470" width="300" height="80" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="524" y="503" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">🌸 Namwon</text>
+  <text x="524" y="532" font-family="Arial, sans-serif" font-size="15" fill="rgba(255,255,255,0.4)" text-anchor="middle">Chunhyang Festival</text>
+
+  <rect x="694" y="470" width="332" height="80" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="860" y="503" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">🏘️ Jeonju</text>
+  <text x="860" y="532" font-family="Arial, sans-serif" font-size="15" fill="rgba(255,255,255,0.4)" text-anchor="middle">Hanok Village</text>
+
+  <!-- Highlights -->
+  <text x="54" y="612" font-family="Arial, sans-serif" font-size="16" fill="#FF4B00" font-weight="bold" letter-spacing="2">WHAT YOU'LL DO</text>
+  <text x="54" y="650" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  UNESCO Buseoksa Temple (1,350 years old)</text>
+  <text x="54" y="686" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Seonbi Culture Festival — traditional scholars</text>
+  <text x="54" y="722" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Chunhyang Festival evening &amp; parade</text>
+  <text x="54" y="758" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Jeonju Hanok Village &amp; Gyeonggijeon Shrine</text>
+  <text x="54" y="794" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Rural village breakfast experience</text>
+  <text x="54" y="830" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Bus · 1 night · 3 meals · all entry fees</text>
+
+  <!-- Divider -->
+  <rect x="54" y="866" width="972" height="1" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Price & handle -->
+  <text x="54" y="916" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">PRICE</text>
+  <text x="54" y="958" font-family="Georgia, serif" font-size="52" fill="white" font-weight="bold">10 EUR</text>
+  <text x="310" y="948" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">exchange &amp; intl students</text>
+  <text x="310" y="972" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.3)">20 EUR other foreigners · link in bio</text>
+
+  <text x="1026" y="958" font-family="Arial, sans-serif" font-size="22" fill="#FF4B00" font-weight="bold" text-anchor="end">@kims_community_travel</text>
+
+  <rect x="0" y="1073" width="1080" height="7" fill="url(#orange)"/>
+</svg>
