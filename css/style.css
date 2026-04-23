@@ -375,6 +375,12 @@ p { color: var(--mid); line-height: 1.7; }
   height: 100%;
   object-fit: cover;
 }
+.trip-card-img--placeholder {
+  background: linear-gradient(135deg, #fff0eb 0%, #ffe4d6 100%);
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+}
 .trip-card-body {
   padding: 20px;
   flex: 1;
