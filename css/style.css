@@ -587,6 +587,18 @@ p { color: var(--mid); line-height: 1.7; }
 }
 .back-link:hover { color: var(--orange); }
 
+/* ─── DESTINATION LINKS IN TRIP PAGES ───────────────────── */
+.trip-detail-body a[target="_blank"] {
+  color: var(--orange);
+  text-decoration: underline;
+  text-decoration-color: rgba(255,75,0,.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition);
+}
+.trip-detail-body a[target="_blank"]:hover {
+  text-decoration-color: var(--orange);
+}
+
 /* ─── EVENT CARD ─────────────────────────────────────────── */
 .event-card {
   background: var(--white);
