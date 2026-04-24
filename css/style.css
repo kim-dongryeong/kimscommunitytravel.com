@@ -589,14 +589,40 @@ p { color: var(--mid); line-height: 1.7; }
 
 /* ─── DESTINATION LINKS IN TRIP PAGES ───────────────────── */
 .trip-detail-body a[target="_blank"] {
-  color: var(--orange);
+  color: inherit;
   text-decoration: underline;
-  text-decoration-color: rgba(255,75,0,.35);
+  text-decoration-color: rgba(0,0,0,.2);
   text-underline-offset: 3px;
   transition: text-decoration-color var(--transition);
 }
 .trip-detail-body a[target="_blank"]:hover {
   text-decoration-color: var(--orange);
+}
+/* Source badge with open_in_new icon */
+.ext-src {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: var(--orange);
+  background: var(--orange-10);
+  border: 1px solid rgba(255,75,0,.2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin-left: 5px;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.ext-src::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z' fill='%23FF4B00'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 /* ─── EVENT CARD ─────────────────────────────────────────── */
