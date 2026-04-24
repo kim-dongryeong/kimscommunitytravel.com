@@ -37,7 +37,7 @@
 
   <text x="54" y="156" font-family="Georgia, serif" font-size="46" fill="white" font-weight="bold">Schedule</text>
   <text x="340" y="156" font-family="Georgia, serif" font-size="46" fill="#FF4B00" font-weight="bold">· May 2–3</text>
-  <text x="54" y="193" font-family="Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.45)">Yeongju · Namwon · Jeonju · Meet 07:00 Yongsan Exit 1</text>
+  <text x="54" y="193" font-family="Arial, sans-serif" font-size="22" fill="rgba(255,255,255,0.45)">Yeongju · Namwon · Jeonju · Meet 06:45 · Depart 07:00 · Yongsan Exit 1</text>
 
   <!-- ── DAY 1 HEADER ── -->
   <rect x="0" y="214" width="1080" height="52" fill="url(#day1grad)"/>
@@ -47,13 +47,13 @@
 
   <!-- DAY 1 ITEMS (each row height=82, start y=266) -->
 
-  <!-- Item 1: 07:00 -->
+  <!-- Item 1: 06:45 meet / 07:00 depart -->
   <rect x="0" y="266" width="1080" height="82" fill="rgba(255,75,0,0.04)"/>
   <rect x="0" y="266" width="4" height="82" fill="#FF4B00" opacity="0.6"/>
-  <text x="80" y="315" font-family="Arial, sans-serif" font-size="21" fill="#FF4B00" font-weight="bold">07:00</text>
+  <text x="80" y="315" font-family="Arial, sans-serif" font-size="21" fill="#FF4B00" font-weight="bold">06:45</text>
   <circle cx="210" cy="307" r="5" fill="#FF4B00" opacity="0.7"/>
-  <text x="228" y="308" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">Depart Seoul</text>
-  <text x="228" y="334" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Yongsan Station Exit 1 · Chartered Bus</text>
+  <text x="228" y="308" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">Meet · Yongsan Station Exit 1</text>
+  <text x="228" y="334" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Depart 07:00 · Chartered Bus</text>
   <rect x="0" y="347" width="1080" height="1" fill="rgba(255,255,255,0.05)"/>
 
   <!-- Item 2: 10:30 -->

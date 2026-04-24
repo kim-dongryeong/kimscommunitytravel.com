@@ -49,7 +49,7 @@
   <rect x="64" y="582" width="952" height="130" rx="16" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
   <text x="104" y="628" font-family="Arial, sans-serif" font-size="18" fill="#FF4B00" font-weight="bold" letter-spacing="2">DATES</text>
   <text x="104" y="662" font-family="Georgia, serif" font-size="30" fill="white" font-weight="bold">May 4–5, 2026 (Mon–Tue)</text>
-  <text x="104" y="694" font-family="Arial, sans-serif" font-size="20" fill="white" opacity="0.55">Meet 07:00 · Yongsan Station Exit 1 · Children's Day weekend</text>
+  <text x="104" y="694" font-family="Arial, sans-serif" font-size="20" fill="white" opacity="0.55">Meet 06:45 · Depart 07:00 · Yongsan Station Exit 1</text>
 
   <!-- Destinations -->
   <text x="64" y="772" font-family="Arial, sans-serif" font-size="18" fill="#FF4B00" font-weight="bold" letter-spacing="2">DESTINATIONS</text>
