@@ -60,7 +60,7 @@
   <text x="80" y="397" font-family="Arial, sans-serif" font-size="21" fill="#FF4B00" font-weight="bold">10:30</text>
   <circle cx="210" cy="389" r="5" fill="#FF4B00" opacity="0.7"/>
   <text x="228" y="390" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">Arrive Yeongju</text>
-  <text x="228" y="416" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Lunch near Buseoksa Temple (UNESCO)</text>
+  <text x="228" y="416" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Lunch near Buseoksa Temple · provided ✓</text>
   <rect x="0" y="429" width="1080" height="1" fill="rgba(255,255,255,0.05)"/>
 
   <!-- Item 3: 13:00 -->
@@ -85,7 +85,7 @@
   <text x="80" y="643" font-family="Arial, sans-serif" font-size="21" fill="#FF4B00" font-weight="bold">18:30</text>
   <circle cx="210" cy="635" r="5" fill="#FF4B00" opacity="0.7"/>
   <text x="228" y="636" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">Namwon Chunhyang Festival 🌸</text>
-  <text x="228" y="662" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Evening entry · free dinner (own expense)</text>
+  <text x="228" y="662" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Evening admission · street food &amp; atmosphere</text>
   <rect x="0" y="675" width="1080" height="1" fill="rgba(255,255,255,0.05)"/>
 
   <!-- Item 6: 21:30 -->
@@ -109,7 +109,7 @@
   <text x="80" y="859" font-family="Arial, sans-serif" font-size="21" fill="#60a5fa" font-weight="bold">07:00</text>
   <circle cx="210" cy="851" r="5" fill="#60a5fa" opacity="0.7"/>
   <text x="228" y="852" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">Breakfast · Rural Village Experience</text>
-  <text x="228" y="878" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Morning meal provided · countryside stay</text>
+  <text x="228" y="878" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Breakfast provided ✓ · countryside experience</text>
   <rect x="0" y="891" width="1080" height="1" fill="rgba(255,255,255,0.05)"/>
 
   <!-- Item 8: 10:00 -->
@@ -125,7 +125,7 @@
   <text x="80" y="1023" font-family="Arial, sans-serif" font-size="21" fill="#60a5fa" font-weight="bold">11:50</text>
   <circle cx="210" cy="1015" r="5" fill="#60a5fa" opacity="0.7"/>
   <text x="228" y="1016" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">Wonseok Myeonghwa Village</text>
-  <text x="228" y="1042" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Folk painting experience · lunch (provided)</text>
+  <text x="228" y="1042" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Folk painting experience · lunch provided ✓</text>
   <rect x="0" y="1055" width="1080" height="1" fill="rgba(255,255,255,0.05)"/>
 
   <!-- Item 10: 13:40 -->

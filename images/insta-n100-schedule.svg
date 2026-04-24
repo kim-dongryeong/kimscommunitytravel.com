@@ -120,7 +120,7 @@
   <text x="80" y="1041" font-family="Arial, sans-serif" font-size="21" fill="#60a5fa" font-weight="bold">11:30</text>
   <circle cx="210" cy="1033" r="5" fill="#60a5fa" opacity="0.7"/>
   <text x="228" y="1026" font-family="Arial, sans-serif" font-size="26" fill="white" font-weight="bold">Yeoju Traditional Market</text>
-  <text x="228" y="1056" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.45)">Free lunch · own expense · local market</text>
+  <text x="228" y="1056" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.45)">Yeoju Traditional Market · browse &amp; explore</text>
   <rect x="0" y="1077" width="1080" height="1" fill="rgba(255,255,255,0.05)"/>
 
   <!-- Item 9: 13:10 -->
