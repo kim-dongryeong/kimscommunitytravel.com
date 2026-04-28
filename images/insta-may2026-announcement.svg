@@ -42,7 +42,7 @@
   <!-- Trip cards -->
   <rect x="54" y="548" width="468" height="200" rx="16" fill="url(#card)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
   <rect x="54" y="548" width="5" height="200" rx="2" fill="#FF4B00"/>
-  <text x="80" y="590" font-family="Arial, sans-serif" font-size="14" fill="#FF4B00" font-weight="bold" letter-spacing="2">N99 · MAY 2–3 (SAT–SUN)</text>
+  <text x="80" y="590" font-family="Arial, sans-serif" font-size="14" fill="#FF4B00" font-weight="bold" letter-spacing="2">N100 · MAY 2–3 (SAT–SUN)</text>
   <text x="80" y="622" font-family="Georgia, serif" font-size="22" fill="white" font-weight="bold">Seonbi, Chunhyang</text>
   <text x="80" y="650" font-family="Georgia, serif" font-size="22" fill="white" font-weight="bold">&amp; Jeonju</text>
   <text x="80" y="684" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.5)">⛩️ Buseoksa  🌸 Chunhyang  🏘️ Jeonju</text>
@@ -50,7 +50,7 @@
 
   <rect x="558" y="548" width="468" height="200" rx="16" fill="url(#card)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
   <rect x="558" y="548" width="5" height="200" rx="2" fill="#FF4B00"/>
-  <text x="584" y="590" font-family="Arial, sans-serif" font-size="14" fill="#FF4B00" font-weight="bold" letter-spacing="2">N100 · MAY 4–5 (MON–TUE)</text>
+  <text x="584" y="590" font-family="Arial, sans-serif" font-size="14" fill="#FF4B00" font-weight="bold" letter-spacing="2">N101 · MAY 4–5 (MON–TUE)</text>
   <text x="584" y="622" font-family="Georgia, serif" font-size="22" fill="white" font-weight="bold">Chunhyang &amp; Yeoju</text>
   <text x="584" y="650" font-family="Georgia, serif" font-size="22" fill="white" font-weight="bold">Bicycle Festival</text>
   <text x="584" y="684" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.5)">🌸 Parade  🚴 Yeoju  🌷 Seoul</text>

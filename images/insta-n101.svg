@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#1a1f2e"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF4B00"/>
+      <stop offset="100%" stop-color="#ff7a3d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <circle cx="120" cy="160" r="300" fill="#FF4B00" opacity="0.07"/>
+  <circle cx="980" cy="950" r="240" fill="#FF4B00" opacity="0.05"/>
+
+  <rect x="0" y="0" width="1080" height="7" fill="url(#orange)"/>
+
+  <!-- Header -->
+  <text x="54" y="66" font-family="Georgia, serif" font-size="20" fill="#FF4B00" font-weight="bold" letter-spacing="4">KIM'S COMMUNITY TRAVEL</text>
+  <rect x="54" y="90" width="116" height="34" rx="7" fill="#FF4B00"/>
+  <text x="112" y="114" font-family="Georgia, serif" font-size="20" fill="white" font-weight="bold" text-anchor="middle">N101</text>
+  <rect x="184" y="90" width="250" height="34" rx="7" fill="rgba(255,255,255,0.08)"/>
+  <text x="309" y="114" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" text-anchor="middle">🇰🇷 Gov. Sponsored</text>
+
+  <!-- Title -->
+  <text x="54" y="210" font-family="Georgia, serif" font-size="64" fill="#FF4B00" font-weight="bold">Chunhyang Festival</text>
+  <text x="54" y="286" font-family="Georgia, serif" font-size="64" fill="white" font-weight="bold">&amp; Yeoju</text>
+  <text x="54" y="362" font-family="Georgia, serif" font-size="64" fill="white" font-weight="bold">Bicycle Festival</text>
+
+  <rect x="54" y="392" width="60" height="4" rx="2" fill="#FF4B00"/>
+
+  <!-- Date -->
+  <text x="54" y="436" font-family="Arial, sans-serif" font-size="26" fill="rgba(255,255,255,0.55)">📅 May 4–5, 2026 · Mon–Tue · Golden Week</text>
+
+  <!-- Destinations row -->
+  <rect x="54" y="468" width="300" height="80" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="204" y="501" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">🌸 Namwon</text>
+  <text x="204" y="530" font-family="Arial, sans-serif" font-size="15" fill="rgba(255,255,255,0.4)" text-anchor="middle">Festival + Parade</text>
+
+  <rect x="374" y="468" width="300" height="80" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="524" y="501" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">🚴 Yeoju</text>
+  <text x="524" y="530" font-family="Arial, sans-serif" font-size="15" fill="rgba(255,255,255,0.4)" text-anchor="middle">Bicycle Festival</text>
+
+  <rect x="694" y="468" width="332" height="80" rx="12" fill="url(#card)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="860" y="501" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">🌷 Seoul</text>
+  <text x="860" y="530" font-family="Arial, sans-serif" font-size="15" fill="rgba(255,255,255,0.4)" text-anchor="middle">Spring Festa finale</text>
+
+  <!-- Highlights -->
+  <text x="54" y="614" font-family="Arial, sans-serif" font-size="16" fill="#FF4B00" font-weight="bold" letter-spacing="2">WHAT YOU'LL DO</text>
+  <text x="54" y="652" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Chunhyang Festival grand street parade</text>
+  <text x="54" y="688" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Kim Byeong-jong Art Museum, Namwon</text>
+  <text x="54" y="724" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Overnight at a rural Korean village</text>
+  <text x="54" y="760" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Yeoju Bicycle Festival by the riverside</text>
+  <text x="54" y="796" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Seoul Spring Festa — final evening, free</text>
+  <text x="54" y="832" font-family="Arial, sans-serif" font-size="23" fill="rgba(255,255,255,0.82)">✦  Bus · 1 night · 3 meals · all entry fees</text>
+
+  <!-- Divider -->
+  <rect x="54" y="868" width="972" height="1" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Price & handle -->
+  <text x="54" y="916" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">PRICE</text>
+  <text x="54" y="958" font-family="Georgia, serif" font-size="52" fill="white" font-weight="bold">10 EUR</text>
+  <text x="310" y="948" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.4)">exchange &amp; intl students</text>
+  <text x="310" y="972" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.3)">20 EUR other foreigners · link in bio</text>
+
+  <text x="1026" y="958" font-family="Arial, sans-serif" font-size="22" fill="#FF4B00" font-weight="bold" text-anchor="end">@kims_community_travel</text>
+
+  <rect x="0" y="1073" width="1080" height="7" fill="url(#orange)"/>
+</svg>
