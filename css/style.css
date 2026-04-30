@@ -583,7 +583,9 @@ p { color: var(--mid); line-height: 1.7; }
   background: #f7f7f7;
   border-top: 1px solid var(--border);
 }
-.photo-strip--collapsed { display: none; }
+/* First N photos always visible; extras hidden until expanded */
+.photo-strip img.photo-extra { display: none; }
+.photo-strip.is-expanded img.photo-extra { display: block; }
 
 /* ── Key Experiences card grid ── */
 .exp-grid {
