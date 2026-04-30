@@ -35,11 +35,24 @@
   .subhead { font-size:36px; font-weight:500; line-height:1.25; margin-top:20px; color:#FAEEDA; max-width:900px; }
   .subhead strong { font-weight:800; color:#FAC775; }
 
+  /* Photo strip backdrop — makes tiles pop off the background */
+  .strip-wrap {
+    position:absolute; bottom:310px; left:0; right:0; z-index:3;
+    padding:28px 50px 32px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 18%, rgba(0,0,0,0.82) 80%, rgba(0,0,0,0) 100%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
   /* Photo strip */
-  .strip { position:absolute; bottom:330px; left:50px; right:50px; z-index:4; display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
-  .strip-item { aspect-ratio:1/1; border-radius:14px; overflow:hidden; position:relative; box-shadow:0 12px 32px rgba(0,0,0,0.5); }
-  .strip-item img { width:100%; height:100%; object-fit:cover; }
-  .strip-item::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.88) 100%); }
+  .strip { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+  .strip-item {
+    aspect-ratio:1/1; border-radius:16px; overflow:hidden; position:relative;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.18), 0 20px 50px rgba(0,0,0,0.75);
+    outline: 3px solid rgba(255,255,255,0.08);
+  }
+  .strip-item img { width:100%; height:100%; object-fit:cover; display:block; }
+  .strip-item::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.90) 100%); }
   .strip-label { position:absolute; bottom:18px; left:20px; right:20px; color:#FAEEDA; font-size:26px; font-weight:800; letter-spacing:0.5px; text-transform:uppercase; z-index:2; line-height:1.1; }
   .strip-label small { display:block; font-size:14px; font-weight:500; opacity:0.85; letter-spacing:1.5px; margin-top:5px; }
 
@@ -83,18 +96,20 @@
     <div class="subhead">Three cities. Two days. <strong>Just €10 admin fee.</strong></div>
   </div>
 
-  <div class="strip">
-    <div class="strip-item">
-      <img src="n100/jeonju-hanok-village/08.jpg" alt="">
-      <div class="strip-label">Jeonju<small>Hanok Village</small></div>
-    </div>
-    <div class="strip-item">
-      <img src="n100/gyeonggijeon-royal-shrine/55.jpg" alt="">
-      <div class="strip-label">Gyeonggijeon<small>Royal Shrine</small></div>
-    </div>
-    <div class="strip-item">
-      <img src="n100/gyeonggijeon-royal-shrine/39.jpg" alt="">
-      <div class="strip-label">Chunhyang<small>Festival · Namwon</small></div>
+  <div class="strip-wrap">
+    <div class="strip">
+      <div class="strip-item">
+        <img src="n100/jeonju-hanok-village/08.jpg" alt="">
+        <div class="strip-label">Jeonju<small>Hanok Village</small></div>
+      </div>
+      <div class="strip-item">
+        <img src="n100/gyeonggijeon-royal-shrine/55.jpg" alt="">
+        <div class="strip-label">Gyeonggijeon<small>Royal Shrine</small></div>
+      </div>
+      <div class="strip-item">
+        <img src="n100/gyeonggijeon-royal-shrine/39.jpg" alt="">
+        <div class="strip-label">Chunhyang<small>Festival · Namwon</small></div>
+      </div>
     </div>
   </div>
 
