@@ -140,8 +140,8 @@
   <rect x="0" y="1138" width="4" height="82" fill="#2563EB" opacity="0.6"/>
   <text x="80" y="1187" font-family="Arial, sans-serif" font-size="21" fill="#60a5fa" font-weight="bold">15:20</text>
   <circle cx="210" cy="1179" r="5" fill="#60a5fa" opacity="0.7"/>
-  <text x="228" y="1180" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">National Jeonju Museum</text>
-  <text x="228" y="1206" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Jeonju History Museum · Korean heritage</text>
+  <text x="228" y="1180" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">Jeonju National Museum</text>
+  <text x="228" y="1206" font-family="Arial, sans-serif" font-size="19" fill="rgba(255,255,255,0.45)">Jeonju Museum of History · Korean heritage</text>
   <rect x="0" y="1219" width="1080" height="1" fill="rgba(255,255,255,0.05)"/>
 
   <!-- Item 12: 16:30 -->
