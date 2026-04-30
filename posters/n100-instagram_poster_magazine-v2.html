@@ -16,7 +16,8 @@
                 align-items: center;
                 justify-content: center;
                 min-height: 100vh;
-                padding: 24px;
+                margin: 0;
+                padding: 0;
                 font-family: 'Inter',sans-serif;
             }
 
@@ -27,21 +28,7 @@
                 overflow: hidden;
                 background: #F5EFE4;
                 box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-                transform-origin: center;
-            }
-
-            @media (max-width: 1130px) {
-                .poster {
-                    transform:scale(0.5);
-                    margin: -270px;
-                }
-            }
-
-            @media (max-width: 600px) {
-                .poster {
-                    transform:scale(0.32);
-                    margin: -367px;
-                }
+                flex-shrink: 0;
             }
 
             /* Magazine top bar */
