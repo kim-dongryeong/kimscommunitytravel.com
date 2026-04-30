@@ -375,6 +375,23 @@ p { color: var(--mid); line-height: 1.7; }
   height: 100%;
   object-fit: cover;
 }
+/* Poster iframe inside a trip card image slot */
+.poster-iframe-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+.poster-iframe-wrap iframe {
+  width: 1080px;
+  height: 1080px;
+  border: none;
+  pointer-events: none;
+  transform-origin: top left;
+  display: block;
+}
+
 .trip-card-img--placeholder {
   background: linear-gradient(135deg, #fff0eb 0%, #ffe4d6 100%);
   display: flex;

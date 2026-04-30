@@ -21,3 +21,19 @@ window.addEventListener('resize', () => {
     document.body.style.overflow = '';
   }
 });
+
+// Scale iframe poster previews to fit their wrapper
+function scaleCardIframes() {
+  document.querySelectorAll('.ig-html-wrap, .poster-iframe-wrap').forEach(wrap => {
+    const iframe = wrap.querySelector('iframe');
+    if (!iframe) return;
+    const posterW = Number(iframe.dataset.posterW) || 1080;
+    const posterH = Number(iframe.dataset.posterH) || 1080;
+    const scale = wrap.offsetWidth / posterW;
+    iframe.style.transform = `scale(${scale})`;
+    // Keep wrapper height in sync (needed for non-square posters)
+    wrap.style.height = Math.round(posterH * scale) + 'px';
+  });
+}
+scaleCardIframes();
+window.addEventListener('resize', scaleCardIframes);
