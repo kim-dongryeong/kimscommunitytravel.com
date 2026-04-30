@@ -588,7 +588,7 @@ p { color: var(--mid); line-height: 1.7; }
   flex-wrap: wrap;
   overflow-x: hidden;
   overflow-y: auto;
-  max-height: 480px;
+  max-height: 720px;
 }
 .photo-strip.is-expanded img {
   height: 130px;
