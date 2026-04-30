@@ -583,10 +583,12 @@ p { color: var(--mid); line-height: 1.7; }
   background: #f7f7f7;
   border-top: 1px solid var(--border);
 }
-/* Expanded: wrap into a grid so all photos show without scrolling */
+/* Expanded: wrap into a grid, capped height with vertical scroll */
 .photo-strip.is-expanded {
   flex-wrap: wrap;
-  overflow-x: visible;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 480px;
 }
 .photo-strip.is-expanded img {
   height: 130px;
