@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N100 Travel Poster</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .poster {
+      width: 1080px;
+      height: 1350px;
+      background: linear-gradient(160deg, #fff8f0 0%, #fce4f0 30%, #e8f4e8 65%, #d4eaf7 100%);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ── HERO PHOTO ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 544px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+    }
+    /* dark gradient over hero bottom */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(13, 17, 23, 0.15) 0%, rgba(13, 17, 23, 0.0) 30%, rgb(13 17 23 / 45%) 75%, rgb(13 17 23 / 63%) 100%);
+    }
+    /* top gradient for branding readability */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(13,17,23,0.55) 0%,
+        transparent 35%
+      );
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(to right, #FF4B00, #ff7a3d);
+      z-index: 10;
+    }
+
+    /* ── HEADER (over hero) ── */
+    .header {
+      position: absolute;
+      top: 28px;
+      left: 54px;
+      right: 54px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-size: 15px;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      letter-spacing: 3.5px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .badge-trip {
+      background: #FF4B00;
+      color: #fff;
+      font-family: Georgia, serif;
+      font-size: 17px;
+      font-weight: bold;
+      padding: 6px 18px;
+      border-radius: 6px;
+    }
+
+    /* ── TITLE (over hero, bottom) ── */
+    .title-block {
+      position: absolute;
+      bottom: 0;
+      left: 54px;
+      right: 54px;
+      z-index: 10;
+      padding-bottom: 12px;
+    }
+    .title-label {
+      font-family: Arial, sans-serif;
+      font-size: 44px;
+      letter-spacing: 3px;
+      color: rgb(255 255 255);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      text-shadow: 0 0px 5px rgb(0 0 0 / 90%);
+    }
+    .title-main {
+      font-size: 64px;
+      font-weight: bold;
+      line-height: 1.05;
+      color: #fff;
+      text-shadow: 0 0px 30px rgb(0 0 0 / 70%);
+    }
+    .title-main em {
+      color: #FF4B00;
+      font-style: normal;
+    }
+    .title-divider {
+      width: 56px;
+      height: 4px;
+      background: #FF4B00;
+      border-radius: 2px;
+      margin-top: 18px;
+    }
+
+    /* ── PHOTO GRID ── */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 210px 210px;
+      gap: 6px;
+      padding: 6px 0;
+    }
+    .photo-grid .cell {
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-grid .cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-grid .cell.tall {
+      grid-row: span 2;
+    }
+    .photo-grid .cell .cell-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 10px 14px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+      font-family: Arial, sans-serif;
+      font-size: 35px;
+      color: rgb(255 255 255);
+      letter-spacing: .5px;
+      text-shadow: 0 0px 4px rgb(0 0 0 / 70%);
+    }
+
+    /* ── BOTTOM INFO BAR ── */
+    .info-bar {
+      padding: 17px 54px 0;
+    }
+    .info-row {
+      display: flex;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .info-chip {
+      flex: 1;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(255,255,255,0.85);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .info-chip-label {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #FF4B00;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .info-chip-val {
+      font-family: Arial, sans-serif;
+      font-size: 23px;
+      color: rgba(40,30,50,0.85);
+      line-height: 1.4;
+    }
+    .price-chip {
+      background: rgba(255,75,0,0.08);
+      border-color: rgba(255,75,0,0.3);
+    }
+    .price-val {
+      font-family: Georgia, serif;
+      font-size: 44px;
+      font-weight: bold;
+      color: #d13800;
+    }
+
+    /* ── DESTINATIONS ROW ── */
+    .dest-row {
+      display: flex;
+      gap: 0;
+      margin-top: 0px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 8px;
+    }
+    .dest-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 10px;
+      border-right: 1px solid rgba(0,0,0,0.08);
+    }
+    .dest-item:last-child { border-right: none; }
+    .dest-icon { font-size: 26px; margin-bottom: 6px; }
+    .dest-name {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      color: #2a1a2e;
+      font-weight: bold;
+    }
+    .dest-sub {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: rgba(40,30,50,0.45);
+      margin-top: 3px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 54px;
+      margin-top: 10px;
+    }
+    .footer-left {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: rgba(40,30,50,0.4);
+      line-height: 1.6;
+    }
+    .footer-handle {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      color: #FF4B00;
+    }
+
+    /* ── BOTTOM BAR ── */
+    .bottom-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(to right, #FF4B00, #ff7a3d);
+    }
+  </style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="top-bar"></div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <img src="/images/n100/buseoksa-stairs.jpg" alt="Buseoksa Temple">
+    <div class="header">
+      <span class="brand">Kim's Community Travel</span>
+      <span class="badge-trip">N100</span>
+    </div>
+    <div class="title-block">
+      <div class="title-label">May 2–3, 2026 · Sat–Sun · Government Sponsored 🇰🇷</div>
+      <div class="title-main">Seonbi Scholars,<br><em>Chunhyang</em><br>&amp; Jeonju</div>
+      <div class="title-divider"></div>
+    </div>
+  </div>
+
+  <!-- PHOTO GRID -->
+  <div class="photo-grid">
+    <div class="cell tall">
+      <img src="/images/n100/seonbi-dancers-aerial.jpg" alt="Seonbi Festival dancers">
+      <div class="cell-label">⛩️ Seonbi Culture Festival · Yeongju</div>
+    </div>
+    <div class="cell">
+      <img src="/images/n100/chunhyang-night.jpg" alt="Chunhyang Festival night">
+      <div class="cell-label">🌸 Chunhyang Festival · Namwon</div>
+    </div>
+    <div class="cell">
+      <img src="/images/n100/buseoksa-pagoda.jpg" alt="Buseoksa pagoda">
+      <div class="cell-label">⛩️ Buseoksa Temple (부석사)</div>
+    </div>
+    <div class="cell">
+      <img src="/images/n100/chunhyang-parade.jpg" alt="Chunhyang parade">
+      <div class="cell-label">🌸 Grand Street Parade</div>
+    </div>
+    <div class="cell">
+      <img src="/images/n100/jeonju-hanok.jpg" alt="Jeonju Hanok Village">
+      <div class="cell-label">🏘️ Jeonju Hanok Village</div>
+    </div>
+  </div>
+
+  <!-- INFO BAR -->
+  <div class="info-bar">
+    <div class="info-row">
+      <div class="info-chip price-chip">
+        <span class="info-chip-label">Price</span>
+        <span class="price-val">10 EUR</span>
+        <span class="info-chip-val" style="font-size:13px;color:rgba(255,255,255,.4);">Exchange &amp; international students<br>20 EUR other foreigners</span>
+      </div>
+      <div class="info-chip">
+        <span class="info-chip-label">Included</span>
+        <span class="info-chip-val">🚌 Chartered bus<br>🛏️ 1 night accommodation<br>🍱 3 meals · All entry fees</span>
+      </div>
+      <div class="info-chip">
+        <span class="info-chip-label">Meeting</span>
+        <span class="info-chip-val">06:45 · Yongsan Station Exit 1<br>Depart 07:00<br>Open to all foreigners</span>
+      </div>
+    </div>
+
+    <div class="dest-row">
+      <div class="dest-item">
+        <div class="dest-icon">⛩️</div>
+        <div class="dest-name">Yeongju</div>
+        <div class="dest-sub">Buseoksa · Seonbi Festival</div>
+      </div>
+      <div class="dest-item">
+        <div class="dest-icon">🌸</div>
+        <div class="dest-name">Namwon</div>
+        <div class="dest-sub">Chunhyang Festival</div>
+      </div>
+      <div class="dest-item">
+        <div class="dest-icon">🌙</div>
+        <div class="dest-name">Jirisan</div>
+        <div class="dest-sub">Rural village overnight</div>
+      </div>
+      <div class="dest-item">
+        <div class="dest-icon">🏘️</div>
+        <div class="dest-name">Jeonju</div>
+        <div class="dest-sub">Hanok Village · Museum</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      kimscommunitytravel.com<br>
+      Book now → link in bio
+    </div>
+    <div class="footer-handle">@kims_community_travel</div>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+</body>
+</html>
