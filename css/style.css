@@ -554,12 +554,36 @@ p { color: var(--mid); line-height: 1.7; }
   gap: 4px;
   margin-bottom: 12px;
 }
+.photo-strip-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: calc(100% + 40px);
+  margin: 12px -20px 0;
+  padding: 9px 20px;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border);
+  cursor: pointer;
+  font-size: .83rem;
+  font-weight: 600;
+  color: var(--mid);
+  text-align: left;
+  transition: background .15s, color .15s;
+}
+.photo-strip-toggle:hover { background: #f5f5f5; color: var(--dark); }
+.photo-strip-toggle[aria-expanded="true"] { color: var(--dark); }
+.pst-icon { font-size: 1rem; }
+.pst-arrow { margin-left: auto; font-size: .75rem; color: var(--light); transition: transform .2s; }
+.photo-strip-toggle[aria-expanded="true"] .pst-arrow { transform: rotate(180deg); }
+
 .dest-block .photo-strip {
   margin: 0 -20px;
   padding: 10px 20px;
   background: #f7f7f7;
   border-top: 1px solid var(--border);
 }
+.photo-strip--collapsed { display: none; }
 
 /* ── Key Experiences card grid ── */
 .exp-grid {
