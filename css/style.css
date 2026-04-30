@@ -1221,29 +1221,26 @@ p { color: var(--mid); line-height: 1.7; }
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
 }
-/* Each thumb is a fixed-size box; iframe sits absolutely inside it */
+/* Each thumb is a fixed-size box; iframe uses zoom so layout matches visual size */
 .insta-card-thumb {
   flex-shrink: 0;
   text-decoration: none;
   cursor: pointer;
   display: block;
-  width: calc(1080px * 0.27);   /* 291px */
-  height: calc(1080px * 0.27);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   transition: box-shadow .2s, transform .2s;
   position: relative;
+  line-height: 0;
 }
 .insta-card-thumb iframe {
-  position: absolute;
-  top: 0; left: 0;
   width: 1080px;
   height: 1080px;
   border: none;
   pointer-events: none;
-  transform: scale(0.27);
-  transform-origin: top left;
+  zoom: 0.27;
+  display: block;
 }
 .insta-card-thumb:hover {
   box-shadow: 0 8px 28px rgba(0,0,0,0.2);
