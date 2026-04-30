@@ -1210,3 +1210,59 @@ p { color: var(--mid); line-height: 1.7; }
   .btn-group { flex-direction: column; }
   .btn-group .btn { justify-content: center; }
 }
+
+/* ── Instagram card thumbnails ── */
+.insta-cards-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 8px 0 16px;
+  margin-bottom: 32px;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+.insta-card-thumb {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.insta-card-thumb iframe {
+  width: 1080px;
+  height: 1080px;
+  border: none;
+  border-radius: 12px;
+  pointer-events: none;
+  transform: scale(0.27);
+  transform-origin: top left;
+  display: block;
+}
+/* wrapper clips the scaled iframe to its visual size */
+.insta-card-thumb {
+  width: calc(1080px * 0.27);
+  overflow: hidden;
+  height: calc(1080px * 0.27);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: box-shadow .2s, transform .2s;
+  position: relative;
+}
+.insta-card-thumb:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
+}
+.insta-card-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-align: center;
+  padding: 4px 6px;
+  border-radius: 0 0 12px 12px;
+}
