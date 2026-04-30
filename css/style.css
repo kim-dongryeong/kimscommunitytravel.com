@@ -489,6 +489,78 @@ p { color: var(--mid); line-height: 1.7; }
   margin-bottom: 32px;
   display: block;
 }
+/* ── Combined Destinations section ── */
+.dest-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 16px 0 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.dest-block {
+  padding: 20px 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.dest-block:last-child { border-bottom: none; }
+.dest-block-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.dest-block-icon {
+  font-size: 1.7rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.dest-block-title { flex: 1; min-width: 0; }
+.dest-block-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+.dest-block-meta {
+  font-size: .78rem;
+  color: var(--light);
+  margin-top: 3px;
+}
+.dest-block-korean { color: var(--mid); }
+.dest-block-city { color: var(--light); }
+.dest-block-day {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--orange);
+  background: var(--orange-10);
+  border: 1px solid rgba(255,75,0,.15);
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+.dest-block-desc {
+  font-size: .85rem;
+  color: var(--mid);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+.dest-block-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.dest-block .photo-strip {
+  margin: 0 -20px;
+  padding: 10px 20px;
+  background: #f7f7f7;
+  border-top: 1px solid var(--border);
+}
+
 /* ── Key Experiences card grid ── */
 .exp-grid {
   display: grid;
