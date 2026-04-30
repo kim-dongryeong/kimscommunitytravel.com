@@ -1,0 +1,139 @@
+<html lang="en" data-uu-options="{&quot;killJsListeners&quot;:true,&quot;killCssBlocks&quot;:true,&quot;advancedDebug&quot;:false}"><iframe style="display: none;"></iframe><head>
+<meta charset="UTF-8">
+<title>Kim's Community Travel — N100 Poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#1a1a1a; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:24px; font-family:'Inter',sans-serif; }
+  .poster { width:1080px; height:1080px; position:relative; overflow:hidden; background:#0a0a0a; box-shadow:0 30px 80px rgba(0,0,0,0.5); transform-origin:center; }
+  @media (max-width: 1130px) { .poster { transform:scale(0.5); margin:-270px; } }
+  @media (max-width: 600px) { .poster { transform:scale(0.32); margin:-367px; } }
+
+  /* Hero */
+  .hero { position:absolute; inset:0; z-index:1; }
+  .hero img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+  .hero::after {
+    content:''; position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(10,4,2,0.70) 0%, rgba(10,4,2,0.20) 28%, rgba(10,4,2,0.40) 55%, rgba(5,2,1,0.96) 100%);
+  }
+
+  /* Top bar */
+  .topbar { position:absolute; top:42px; left:0; right:0; z-index:5; display:flex; justify-content:space-between; align-items:center; padding:0 50px; color:#FAEEDA; }
+  .brand-mark { display:flex; align-items:center; gap:12px; }
+  .dot { width:10px; height:10px; background:#EF9F27; border-radius:50%; }
+  .brand { font-size:22px; font-weight:700; letter-spacing:3px; text-transform:uppercase; }
+  .gov-badge { display:inline-flex; align-items:center; gap:10px; padding:12px 24px; background:rgba(250,238,218,0.95); color:#4A1B0C; font-size:16px; font-weight:700; letter-spacing:2px; border-radius:40px; }
+
+  /* Headline */
+  .headline-box { position:absolute; top:120px; left:50px; right:50px; z-index:5; color:#FAEEDA; }
+  .kicker { font-size:28px; font-weight:700; letter-spacing:6px; text-transform:uppercase; color:#FAC775; margin-bottom:8px; }
+  .free-word { font-family:'Playfair Display',serif; font-weight:900; font-size:370px; line-height:0.85; letter-spacing:-12px; color:#FAEEDA; text-shadow:0 8px 30px rgba(0,0,0,0.5); }
+  .free-word .accent { color:#EF9F27; }
+  .subhead { font-size:36px; font-weight:500; line-height:1.25; margin-top:20px; color:#FAEEDA; max-width:900px; }
+  .subhead strong { font-weight:800; color:#FAC775; }
+
+  /* Photo strip backdrop — makes tiles pop off the background */
+  .strip-wrap {
+    position:absolute; bottom:310px; left:0; right:0; z-index:3;
+    padding:28px 50px 32px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 18%, rgba(0,0,0,0.82) 80%, rgba(0,0,0,0) 100%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  /* Photo strip */
+  .strip { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+  .strip-item {
+    aspect-ratio:1/1; border-radius:16px; overflow:hidden; position:relative;
+    box-shadow:
+      -8px -8px 20px rgba(255,255,255,0.30),   /* top-left highlight */
+       8px  8px 24px rgba(0,0,0,0.90);          /* bottom-right shadow */
+  }
+  .strip-item img { width:100%; height:100%; object-fit:cover; display:block; }
+  .strip-item::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.90) 100%); }
+  .strip-label { position:absolute; bottom:18px; left:20px; right:20px; color:#FAEEDA; font-size:26px; font-weight:800; letter-spacing:0.5px; text-transform:uppercase; z-index:2; line-height:1.1; }
+  .strip-label small { display:block; font-size:14px; font-weight:500; opacity:0.85; letter-spacing:1.5px; margin-top:5px; }
+
+  /* Bottom */
+  .bottom { position:absolute; bottom:0; left:0; right:0; z-index:5; padding:36px 50px 44px; }
+  .info-grid { display:grid; grid-template-columns:1.1fr 1.1fr 1fr; gap:24px; align-items:end; color:#FAEEDA; }
+  .info-block .label { font-size:14px; font-weight:700; letter-spacing:3px; color:#EF9F27; text-transform:uppercase; margin-bottom:10px; }
+  .info-block .value { font-size:32px; font-weight:800; line-height:1.05; }
+  .info-block .value small { display:block; font-size:17px; font-weight:500; opacity:0.85; margin-top:6px; letter-spacing:0.5px; }
+  .price-tag { text-align:right; }
+  .price-tag .euro { font-family:'Playfair Display',serif; font-size:104px; font-weight:900; color:#EF9F27; line-height:0.95; }
+  .price-tag .euro span { font-size:52px; vertical-align:top; margin-right:4px; }
+  .price-tag .note { font-size:14px; font-weight:700; letter-spacing:2px; text-transform:uppercase; opacity:0.9; margin-top:6px; }
+
+  .divider { height:1.5px; background:linear-gradient(90deg, transparent, rgba(250,238,218,0.45), transparent); margin:24px 0 22px; }
+
+  .footer-row { display:flex; justify-content:space-between; align-items:center; color:#FAEEDA; }
+  .handle { font-size:21px; font-weight:700; letter-spacing:2px; }
+  .handle .at { color:#EF9F27; }
+  .cta-pill { background:#EF9F27; color:#3B0E2E; padding:16px 32px; border-radius:40px; font-size:18px; font-weight:800; letter-spacing:2px; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="hero">
+    <img src="n100/chunhyang-festival/02.jpg" alt="">
+  </div>
+
+  <div class="topbar">
+    <div class="brand-mark">
+      <div class="dot"></div>
+      <div class="brand">Festival / Museum / Village / Hanok / Shrine</div>
+    </div>
+    <div class="gov-badge"><span>🇰🇷</span> GOV-SPONSORED</div>
+  </div>
+
+  <div class="headline-box">
+    <div class="kicker">2-day trip · foreigners only</div>
+    <div class="free-word">FRE<span class="accent">E</span>!</div>
+    <div class="subhead">Three cities. Two days. <strong>Jeonju / Namwon / Yeongju</strong></div>
+  </div>
+
+  <div class="strip-wrap">
+    <div class="strip">
+      <div class="strip-item">
+        <img src="n100/jeonju-hanok-village/08.jpg" alt="">
+        <div class="strip-label">Jeonju<small>Hanok Village</small></div>
+      </div>
+      <div class="strip-item">
+        <img src="n100/gyeonggijeon-royal-shrine/55.jpg" alt="">
+        <div class="strip-label">Gyeonggijeon<small>Royal Shrine</small></div>
+      </div>
+      <div class="strip-item">
+        <img src="n100/gyeonggijeon-royal-shrine/39.jpg" alt="">
+        <div class="strip-label">Chunhyang<small>Festival · Namwon</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="info-grid">
+      <div class="info-block">
+        <div class="label">When</div>
+        <div class="value">May 2–3<small>Sat &amp; Sun, 2026</small></div>
+      </div>
+      <div class="info-block">
+        <div class="label">From</div>
+        <div class="value">Seoul<small>round trip · bus included</small></div>
+      </div>
+      <div class="info-block price-tag">
+        <div class="euro"><span>€</span>10</div>
+        <div class="note">admin fee only</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="footer-row">
+      <div class="handle"><span class="at">@</span>kims_community_travel</div>
+      <div class="cta-pill">🚌 bus 🍲 food 🛌 accommodation 💖 included</div>
+    </div>
+  </div>
+
+</div>
+
+</body></html>
