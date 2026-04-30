@@ -614,33 +614,26 @@
     if (e.key === 'ArrowRight') next();
   });
 
-  const PREVIEW = 4; // photos visible by default per destination
-
   document.querySelectorAll('.dest-block .photo-strip').forEach(strip => {
     const imgs  = Array.from(strip.querySelectorAll('img'));
     const count = imgs.length;
-    const extra = count - PREVIEW;
     const title = strip.closest('.dest-block').querySelector('.dest-block-name').textContent.trim();
 
-    // Mark photos beyond the preview count as extras (hidden by default)
-    imgs.slice(PREVIEW).forEach(img => img.classList.add('photo-extra'));
+    // Add expand/collapse toggle button before each strip
+    const btn = document.createElement('button');
+    btn.className = 'photo-strip-toggle';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = `<span class="pst-icon">⊞</span><span class="pst-label">Expand all ${count} photos</span><span class="pst-arrow">▾</span>`;
+    strip.parentNode.insertBefore(btn, strip);
 
-    // Only add a toggle button if there are hidden extras
-    if (extra > 0) {
-      const btn = document.createElement('button');
-      btn.className = 'photo-strip-toggle';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = `<span class="pst-icon">📸</span><span class="pst-label">Show ${extra} more photos</span><span class="pst-arrow">▾</span>`;
-      strip.parentNode.insertBefore(btn, strip);
-
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        strip.classList.toggle('is-expanded', !expanded);
-        btn.querySelector('.pst-label').textContent = expanded ? `Show ${extra} more photos` : `Show fewer photos`;
-        btn.querySelector('.pst-arrow').textContent  = expanded ? '▾' : '▴';
-      });
-    }
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      strip.classList.toggle('is-expanded', !expanded);
+      btn.querySelector('.pst-icon').textContent  = expanded ? '⊞' : '⊟';
+      btn.querySelector('.pst-label').textContent = expanded ? `Expand all ${count} photos` : `Collapse photos`;
+      btn.querySelector('.pst-arrow').textContent  = expanded ? '▾' : '▴';
+    });
 
     // Lightbox wiring
     imgs.forEach((img, i) => {
