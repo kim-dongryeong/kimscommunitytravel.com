@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>N100 Destination Cards</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 24px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .card {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  }
+
+  /* Full-bleed photo */
+  .card-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  .card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Gradient overlays */
+  .card-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.05) 35%,
+      rgba(0,0,0,0.05) 45%,
+      rgba(0,0,0,0.75) 75%,
+      rgba(0,0,0,0.92) 100%
+    );
+  }
+
+  /* Top bar */
+  .card-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 5;
+    height: 6px;
+    background: linear-gradient(to right, #FF4B00, #ff7a3d);
+  }
+
+  /* Header */
+  .card-header {
+    position: absolute;
+    top: 22px; left: 54px; right: 54px;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-handle {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(245,239,228,0.75);
+  }
+  .card-handle em { color: #4CAF82; font-style: normal; }
+  .card-counter {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgba(245,239,228,0.5);
+  }
+
+  /* Day badge */
+  .card-day {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    background: #4CAF82;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 40px;
+  }
+
+  /* Bottom content */
+  .card-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 5;
+    padding: 0 60px 54px;
+  }
+
+  .card-type {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #4CAF82;
+    margin-bottom: 16px;
+  }
+
+  .card-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 88px;
+    line-height: 0.9;
+    color: #F5EFE4;
+    letter-spacing: -2px;
+    margin-bottom: 14px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+
+  .card-korean {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 32px;
+    color: rgba(245,239,228,0.55);
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+
+  .card-divider {
+    width: 48px;
+    height: 3px;
+    background: #4CAF82;
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+
+  .card-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    line-height: 1.45;
+    color: rgba(245,239,228,0.82);
+    max-width: 820px;
+    font-weight: 400;
+  }
+
+  /* Bottom bar */
+  .card-bottom-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 6px;
+    z-index: 5;
+    background: linear-gradient(to right, #FF4B00, #ff7a3d);
+  }
+</style>
+</head>
+<body>
+
+<!-- CARD 1: Buseoksa Temple -->
+<div class="card">
+  <div class="card-top"></div>
+  <div class="card-photo">
+    <img src="/images/n100/buseoksa-temple/01.jpg" alt="">
+  </div>
+  <div class="card-header">
+    <div class="card-handle"><em>@</em>kims_community_travel</div>
+    <div class="card-counter">2 / 10</div>
+  </div>
+  <div class="card-day">Day 1 · Morning</div>
+  <div class="card-bottom">
+    <div class="card-type">⛩️ Temple</div>
+    <div class="card-name">Buseoksa<br>Temple</div>
+    <div class="card-korean">부석사 · Yeongju</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">One of Korea's oldest wooden structures, built in 676 AD. Perched high in the Sobaek mountains — a UNESCO World Heritage site with breathtaking views.</div>
+  </div>
+  <div class="card-bottom-bar"></div>
+</div>
+
+<!-- CARD 2: Seonbi Culture Festival -->
+<div class="card">
+  <div class="card-top"></div>
+  <div class="card-photo">
+    <img src="/images/n100/seonbi-culture-festival/01.jpg" alt="">
+  </div>
+  <div class="card-header">
+    <div class="card-handle"><em>@</em>kims_community_travel</div>
+    <div class="card-counter">3 / 10</div>
+  </div>
+  <div class="card-day">Day 1 · Afternoon</div>
+  <div class="card-bottom">
+    <div class="card-type">🏛️ Festival</div>
+    <div class="card-name">Seonbi<br>Festival</div>
+    <div class="card-korean">영주선비문화축제 · Yeongju</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">Celebrating Korea's Confucian scholar tradition — hanbok, calligraphy, traditional games, and ceremonies from the Joseon dynasty come alive.</div>
+  </div>
+  <div class="card-bottom-bar"></div>
+</div>
+
+<!-- CARD 3: Chunhyang Festival -->
+<div class="card">
+  <div class="card-top"></div>
+  <div class="card-photo">
+    <img src="/images/n100/chunhyang-festival/01.jpg" alt="">
+  </div>
+  <div class="card-header">
+    <div class="card-handle"><em>@</em>kims_community_travel</div>
+    <div class="card-counter">4 / 10</div>
+  </div>
+  <div class="card-day">Day 1 · Evening</div>
+  <div class="card-bottom">
+    <div class="card-type">🌸 Festival</div>
+    <div class="card-name">Chunhyang<br>Festival</div>
+    <div class="card-korean">춘향제 · Namwon</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">Korea's most beloved folk festival, celebrating the legendary love story of Chunhyang. Night stage performances, street food, and a spectacular parade.</div>
+  </div>
+  <div class="card-bottom-bar"></div>
+</div>
+
+<!-- CARD 4: Kim Byeong-jong Art Museum -->
+<div class="card">
+  <div class="card-top"></div>
+  <div class="card-photo">
+    <img src="/images/n100/kim-byeong-jong-art-museum/01.jpg" alt="">
+  </div>
+  <div class="card-header">
+    <div class="card-handle"><em>@</em>kims_community_travel</div>
+    <div class="card-counter">5 / 10</div>
+  </div>
+  <div class="card-day">Day 2 · Morning</div>
+  <div class="card-bottom">
+    <div class="card-type">🎨 Museum</div>
+    <div class="card-name">Kim Byeong-jong<br>Art Museum</div>
+    <div class="card-korean">김병종미술관 · Namwon</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">Namwon's municipal art museum dedicated to celebrated Korean painter Kim Byeong-jong, known for his vibrant depictions of life and nature.</div>
+  </div>
+  <div class="card-bottom-bar"></div>
+</div>
+
+<!-- CARD 5: Wonsaek Painting Village -->
+<div class="card">
+  <div class="card-top"></div>
+  <div class="card-photo">
+    <img src="/images/n100/wonsaek-painting-village/01.jpg" alt="">
+  </div>
+  <div class="card-header">
+    <div class="card-handle"><em>@</em>kims_community_travel</div>
+    <div class="card-counter">6 / 10</div>
+  </div>
+  <div class="card-day">Day 2 · Morning</div>
+  <div class="card-bottom">
+    <div class="card-type">🎨 Village</div>
+    <div class="card-name">Wonsaek<br>Painting Village</div>
+    <div class="card-korean">원색명화마을 · Namwon</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">A rural village transformed by folk painting art covering every wall and alley. Hands-on painting experience included — and lunch too.</div>
+  </div>
+  <div class="card-bottom-bar"></div>
+</div>
+
+<!-- CARD 6: Jeonju Hanok Village -->
+<div class="card">
+  <div class="card-top"></div>
+  <div class="card-photo">
+    <img src="/images/n100/jeonju-hanok-village/01.jpg" alt="">
+  </div>
+  <div class="card-header">
+    <div class="card-handle"><em>@</em>kims_community_travel</div>
+    <div class="card-counter">7 / 10</div>
+  </div>
+  <div class="card-day">Day 2 · Afternoon</div>
+  <div class="card-bottom">
+    <div class="card-type">🏘️ Hanok</div>
+    <div class="card-name">Jeonju<br>Hanok Village</div>
+    <div class="card-korean">전주한옥마을 · Jeonju</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">Over 700 traditional Korean hanok houses preserved in the heart of Jeonju. Korea's most iconic heritage village — free time to explore and eat.</div>
+  </div>
+  <div class="card-bottom-bar"></div>
+</div>
+
+<!-- CARD 7: Gyeonggijeon Royal Shrine -->
+<div class="card">
+  <div class="card-top"></div>
+  <div class="card-photo">
+    <img src="/images/n100/gyeonggijeon-royal-shrine/01.jpg" alt="">
+  </div>
+  <div class="card-header">
+    <div class="card-handle"><em>@</em>kims_community_travel</div>
+    <div class="card-counter">8 / 10</div>
+  </div>
+  <div class="card-day">Day 2 · Afternoon</div>
+  <div class="card-bottom">
+    <div class="card-type">👑 Shrine</div>
+    <div class="card-name">Gyeonggijeon<br>Royal Shrine</div>
+    <div class="card-korean">경기전 · Jeonju</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">A royal shrine built in 1410 to enshrine the portrait of King Taejo, founder of the Joseon dynasty. A serene sanctuary inside the Hanok Village.</div>
+  </div>
+  <div class="card-bottom-bar"></div>
+</div>
+
+<!-- CARD 8: Jeonju National Museum -->
+<div class="card">
+  <div class="card-top"></div>
+  <div class="card-photo">
+    <img src="/images/n100/jeonju-national-museum/01.jpg" alt="">
+  </div>
+  <div class="card-header">
+    <div class="card-handle"><em>@</em>kims_community_travel</div>
+    <div class="card-counter">9 / 10</div>
+  </div>
+  <div class="card-day">Day 2 · Afternoon</div>
+  <div class="card-bottom">
+    <div class="card-type">🏛️ Museum</div>
+    <div class="card-name">Jeonju<br>National Museum</div>
+    <div class="card-korean">국립전주박물관 · Jeonju</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">A national museum housing thousands of artifacts from the Jeolla region — celadon, Buddhist art, and relics of the Joseon royal court.</div>
+  </div>
+  <div class="card-bottom-bar"></div>
+</div>
+
+<!-- CARD 9: Jeonju Museum of History -->
+<div class="card">
+  <div class="card-top"></div>
+  <div class="card-photo">
+    <img src="/images/n100/jeonju-museum-of-history/01.jpg" alt="">
+  </div>
+  <div class="card-header">
+    <div class="card-handle"><em>@</em>kims_community_travel</div>
+    <div class="card-counter">10 / 10</div>
+  </div>
+  <div class="card-day">Day 2 · Afternoon</div>
+  <div class="card-bottom">
+    <div class="card-type">🏛️ Museum</div>
+    <div class="card-name">Jeonju Museum<br>of History</div>
+    <div class="card-korean">전주역사박물관 · Jeonju</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">Dedicated to the long history of Jeonju city — from prehistoric settlements to the modern era, told through maps, artifacts, and vivid exhibitions.</div>
+  </div>
+  <div class="card-bottom-bar"></div>
+</div>
+
+</body>
+</html>
