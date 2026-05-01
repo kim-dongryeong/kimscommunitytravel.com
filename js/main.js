@@ -36,12 +36,20 @@ function scaleOneIframe(iframe) {
 }
 
 function scaleCardIframes() {
-  document.querySelectorAll('.ig-html-wrap iframe, .poster-iframe-wrap iframe').forEach(scaleOneIframe);
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.ig-html-wrap iframe, .poster-iframe-wrap iframe').forEach(scaleOneIframe);
+  });
 }
 
-// Re-scale every iframe when it finishes loading (reliable timing)
 document.querySelectorAll('.ig-html-wrap iframe, .poster-iframe-wrap iframe').forEach(iframe => {
-  iframe.addEventListener('load', () => scaleOneIframe(iframe));
+  // Cached case: iframe already loaded before this script ran → scale now
+  if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+    requestAnimationFrame(() => scaleOneIframe(iframe));
+  }
+  // Uncached case: listen for load event
+  iframe.addEventListener('load', () => requestAnimationFrame(() => scaleOneIframe(iframe)));
 });
 
+// Fallback: re-run after everything on the page has loaded
+window.addEventListener('load', scaleCardIframes);
 window.addEventListener('resize', scaleCardIframes);
