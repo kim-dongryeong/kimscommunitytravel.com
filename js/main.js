@@ -23,10 +23,8 @@ window.addEventListener('resize', () => {
 });
 
 // Scale poster iframes to fit their wrapper using ResizeObserver
-// (fires reliably when wrapper has its true layout size, regardless
-// of iframe cache state)
 (function () {
-  const wraps = document.querySelectorAll('.ig-html-wrap, .poster-iframe-wrap');
+  const wraps = document.querySelectorAll('.ig-html-wrap, .poster-iframe-wrap, .ig-poster-tile');
   if (!wraps.length) return;
 
   const lastW = new WeakMap();
@@ -38,10 +36,6 @@ window.addEventListener('resize', () => {
     const posterH = Number(iframe.dataset.posterH) || 1080;
     const scale = w / posterW;
     iframe.style.transform = `scale(${scale})`;
-    // Only override the aspect-ratio-derived height if poster isn't square
-    if (posterW !== posterH) {
-      wrap.style.height = Math.round(posterH * scale) + 'px';
-    }
   }
 
   if (typeof ResizeObserver !== 'undefined') {
@@ -55,7 +49,6 @@ window.addEventListener('resize', () => {
     });
     wraps.forEach(wrap => ro.observe(wrap));
   } else {
-    // Fallback for very old browsers
     function rescaleAll() {
       wraps.forEach(wrap => applyScale(wrap, wrap.getBoundingClientRect().width));
     }
@@ -63,4 +56,97 @@ window.addEventListener('resize', () => {
     window.addEventListener('resize', rescaleAll);
     rescaleAll();
   }
+})();
+
+// Poster modal — opens any element with [data-poster-src] in a centered iframe
+(function () {
+  const modal = document.getElementById('poster-modal');
+  if (!modal) return;
+
+  const frame    = document.getElementById('poster-modal-frame');
+  const iframe   = document.getElementById('poster-modal-iframe');
+  const caption  = document.getElementById('poster-modal-caption');
+  const closeBtn = document.getElementById('poster-modal-close');
+  const prevBtn  = document.getElementById('poster-modal-prev');
+  const nextBtn  = document.getElementById('poster-modal-next');
+
+  const triggers = Array.from(document.querySelectorAll('[data-poster-src]'));
+  if (!triggers.length) return;
+
+  let currentIdx = 0;
+
+  function fitFrame(w, h) {
+    const padX = window.innerWidth < 600 ? 16 : 80;
+    const padY = window.innerWidth < 600 ? 100 : 120;
+    const maxW = window.innerWidth - padX;
+    const maxH = window.innerHeight - padY;
+    const aspect = w / h;
+    let frameW, frameH;
+    if (maxW / maxH > aspect) {
+      frameH = maxH;
+      frameW = frameH * aspect;
+    } else {
+      frameW = maxW;
+      frameH = frameW / aspect;
+    }
+    return { frameW: Math.round(frameW), frameH: Math.round(frameH) };
+  }
+
+  function render(idx) {
+    currentIdx = idx;
+    const t = triggers[idx];
+    const src   = t.dataset.posterSrc;
+    const w     = Number(t.dataset.posterW) || 1080;
+    const h     = Number(t.dataset.posterH) || 1080;
+    const title = t.dataset.posterTitle || '';
+
+    const { frameW, frameH } = fitFrame(w, h);
+    frame.style.width  = frameW + 'px';
+    frame.style.height = frameH + 'px';
+    iframe.style.width  = w + 'px';
+    iframe.style.height = h + 'px';
+    iframe.style.transform = `scale(${frameW / w})`;
+    if (iframe.getAttribute('src') !== src) iframe.setAttribute('src', src);
+
+    caption.innerHTML = title
+      ? `${title} <span class="poster-modal-counter">${idx + 1} / ${triggers.length}</span>`
+      : `<span class="poster-modal-counter">${idx + 1} / ${triggers.length}</span>`;
+  }
+
+  function open(idx) {
+    render(idx);
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    iframe.setAttribute('src', 'about:blank');
+  }
+
+  function prev() { render((currentIdx - 1 + triggers.length) % triggers.length); }
+  function next() { render((currentIdx + 1) % triggers.length); }
+
+  triggers.forEach((trigger, idx) => {
+    trigger.addEventListener('click', e => {
+      e.preventDefault();
+      open(idx);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  window.addEventListener('resize', () => {
+    if (modal.classList.contains('active')) render(currentIdx);
+  });
 })();
