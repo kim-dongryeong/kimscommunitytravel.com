@@ -65,21 +65,17 @@ window.addEventListener('resize', () => {
 
   const frame    = document.getElementById('poster-modal-frame');
   const iframe   = document.getElementById('poster-modal-iframe');
-  const caption  = document.getElementById('poster-modal-caption');
   const closeBtn = document.getElementById('poster-modal-close');
-  const prevBtn  = document.getElementById('poster-modal-prev');
-  const nextBtn  = document.getElementById('poster-modal-next');
 
   const triggers = Array.from(document.querySelectorAll('[data-poster-src]'));
   if (!triggers.length) return;
 
-  let currentIdx = 0;
+  let current = null;
 
   function fitFrame(w, h) {
-    const padX = window.innerWidth < 600 ? 16 : 80;
-    const padY = window.innerWidth < 600 ? 100 : 120;
-    const maxW = window.innerWidth - padX;
-    const maxH = window.innerHeight - padY;
+    // Cap at 90vw × 90vh while preserving the poster's aspect ratio
+    const maxW = window.innerWidth  * 0.9;
+    const maxH = window.innerHeight * 0.9;
     const aspect = w / h;
     let frameW, frameH;
     if (maxW / maxH > aspect) {
@@ -92,29 +88,23 @@ window.addEventListener('resize', () => {
     return { frameW: Math.round(frameW), frameH: Math.round(frameH) };
   }
 
-  function render(idx) {
-    currentIdx = idx;
-    const t = triggers[idx];
-    const src   = t.dataset.posterSrc;
-    const w     = Number(t.dataset.posterW) || 1080;
-    const h     = Number(t.dataset.posterH) || 1080;
-    const title = t.dataset.posterTitle || '';
+  function render(t) {
+    current = t;
+    const src = t.dataset.posterSrc;
+    const w   = Number(t.dataset.posterW) || 1080;
+    const h   = Number(t.dataset.posterH) || 1080;
 
     const { frameW, frameH } = fitFrame(w, h);
-    frame.style.width  = frameW + 'px';
-    frame.style.height = frameH + 'px';
+    frame.style.width   = frameW + 'px';
+    frame.style.height  = frameH + 'px';
     iframe.style.width  = w + 'px';
     iframe.style.height = h + 'px';
     iframe.style.transform = `scale(${frameW / w})`;
     if (iframe.getAttribute('src') !== src) iframe.setAttribute('src', src);
-
-    caption.innerHTML = title
-      ? `${title} <span class="poster-modal-counter">${idx + 1} / ${triggers.length}</span>`
-      : `<span class="poster-modal-counter">${idx + 1} / ${triggers.length}</span>`;
   }
 
-  function open(idx) {
-    render(idx);
+  function open(t) {
+    render(t);
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -123,30 +113,20 @@ window.addEventListener('resize', () => {
     modal.classList.remove('active');
     document.body.style.overflow = '';
     iframe.setAttribute('src', 'about:blank');
+    current = null;
   }
 
-  function prev() { render((currentIdx - 1 + triggers.length) % triggers.length); }
-  function next() { render((currentIdx + 1) % triggers.length); }
-
-  triggers.forEach((trigger, idx) => {
+  triggers.forEach(trigger => {
     trigger.addEventListener('click', e => {
       e.preventDefault();
-      open(idx);
+      open(trigger);
     });
   });
 
   closeBtn.addEventListener('click', close);
-  prevBtn.addEventListener('click', prev);
-  nextBtn.addEventListener('click', next);
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
   document.addEventListener('keydown', e => {
-    if (!modal.classList.contains('active')) return;
-    if (e.key === 'Escape')     close();
-    if (e.key === 'ArrowLeft')  prev();
-    if (e.key === 'ArrowRight') next();
+    if (modal.classList.contains('active') && e.key === 'Escape') close();
   });
-
-  window.addEventListener('resize', () => {
-    if (modal.classList.contains('active')) render(currentIdx);
-  });
+  window.addEventListener('resize', () => { if (current) render(current); });
 })();

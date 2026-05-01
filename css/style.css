@@ -1145,12 +1145,12 @@ p { color: var(--mid); line-height: 1.7; }
 .poster-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.93);
+  background: rgba(0,0,0,0.85);
   z-index: 9999;
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 40px;
 }
 .poster-modal.active { display: flex; }
 
@@ -1158,8 +1158,9 @@ p { color: var(--mid); line-height: 1.7; }
   position: relative;
   background: #000;
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 20px 80px rgba(0,0,0,0.7);
+  border-radius: 12px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+  /* width/height set by JS — capped at 90vw / 90vh */
 }
 .poster-modal-frame iframe {
   position: absolute;
@@ -1171,65 +1172,29 @@ p { color: var(--mid); line-height: 1.7; }
   display: block;
 }
 
-.poster-modal-close,
-.poster-modal-nav {
+.poster-modal-close {
   position: fixed;
-  background: rgba(255,255,255,0.12);
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.14);
   border: none;
   color: #fff;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  font-size: 18px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
   transition: background 0.2s ease;
   z-index: 1;
 }
-.poster-modal-close:hover,
-.poster-modal-nav:hover { background: rgba(255,255,255,0.24); }
-
-.poster-modal-close {
-  top: 20px;
-  right: 20px;
-  width: 44px;
-  height: 44px;
-  font-size: 20px;
-}
-.poster-modal-nav {
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  font-size: 32px;
-  line-height: 1;
-  padding-bottom: 4px;
-}
-.poster-modal-prev { left: 20px; }
-.poster-modal-next { right: 20px; }
-
-.poster-modal-caption {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255,255,255,0.75);
-  font-size: 13px;
-  letter-spacing: 0.3px;
-  pointer-events: none;
-}
-.poster-modal-counter {
-  margin-left: 8px;
-  color: rgba(255,255,255,0.45);
-}
+.poster-modal-close:hover { background: rgba(255,255,255,0.28); }
 
 @media (max-width: 600px) {
-  .poster-modal { padding: 50px 8px; }
+  .poster-modal { padding: 16px; }
   .poster-modal-close { top: 10px; right: 10px; }
-  .poster-modal-nav { width: 40px; height: 40px; font-size: 26px; }
-  .poster-modal-prev { left: 6px; }
-  .poster-modal-next { right: 6px; }
 }
 
 /* ─── CONTACT / CTA STRIP ────────────────────────────────── */
