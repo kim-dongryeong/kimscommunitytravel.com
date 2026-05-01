@@ -384,6 +384,9 @@ p { color: var(--mid); line-height: 1.7; }
   display: block;
 }
 .poster-iframe-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 1080px;
   height: 1080px;
   border: none;
@@ -1134,6 +1137,9 @@ p { color: var(--mid); line-height: 1.7; }
 }
 
 .ig-html-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 1080px;
   height: 1080px;
   border: none;

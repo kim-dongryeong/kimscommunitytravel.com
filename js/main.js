@@ -22,34 +22,45 @@ window.addEventListener('resize', () => {
   }
 });
 
-// Scale a single iframe poster to fit its wrapper
-function scaleOneIframe(iframe) {
-  const wrap = iframe.closest('.ig-html-wrap, .poster-iframe-wrap');
-  if (!wrap) return;
-  const posterW = Number(iframe.dataset.posterW) || 1080;
-  const posterH = Number(iframe.dataset.posterH) || 1080;
-  const w = wrap.getBoundingClientRect().width;
-  if (!w) return;
-  const scale = w / posterW;
-  iframe.style.transform = `scale(${scale})`;
-  wrap.style.height = Math.round(posterH * scale) + 'px';
-}
+// Scale poster iframes to fit their wrapper using ResizeObserver
+// (fires reliably when wrapper has its true layout size, regardless
+// of iframe cache state)
+(function () {
+  const wraps = document.querySelectorAll('.ig-html-wrap, .poster-iframe-wrap');
+  if (!wraps.length) return;
 
-function scaleCardIframes() {
-  requestAnimationFrame(() => {
-    document.querySelectorAll('.ig-html-wrap iframe, .poster-iframe-wrap iframe').forEach(scaleOneIframe);
-  });
-}
+  const lastW = new WeakMap();
 
-document.querySelectorAll('.ig-html-wrap iframe, .poster-iframe-wrap iframe').forEach(iframe => {
-  // Cached case: iframe already loaded before this script ran → scale now
-  if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
-    requestAnimationFrame(() => scaleOneIframe(iframe));
+  function applyScale(wrap, w) {
+    const iframe = wrap.querySelector('iframe');
+    if (!iframe || !w) return;
+    const posterW = Number(iframe.dataset.posterW) || 1080;
+    const posterH = Number(iframe.dataset.posterH) || 1080;
+    const scale = w / posterW;
+    iframe.style.transform = `scale(${scale})`;
+    // Only override the aspect-ratio-derived height if poster isn't square
+    if (posterW !== posterH) {
+      wrap.style.height = Math.round(posterH * scale) + 'px';
+    }
   }
-  // Uncached case: listen for load event
-  iframe.addEventListener('load', () => requestAnimationFrame(() => scaleOneIframe(iframe)));
-});
 
-// Fallback: re-run after everything on the page has loaded
-window.addEventListener('load', scaleCardIframes);
-window.addEventListener('resize', scaleCardIframes);
+  if (typeof ResizeObserver !== 'undefined') {
+    const ro = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        const w = entry.contentRect.width;
+        if (lastW.get(entry.target) === w) continue;
+        lastW.set(entry.target, w);
+        applyScale(entry.target, w);
+      }
+    });
+    wraps.forEach(wrap => ro.observe(wrap));
+  } else {
+    // Fallback for very old browsers
+    function rescaleAll() {
+      wraps.forEach(wrap => applyScale(wrap, wrap.getBoundingClientRect().width));
+    }
+    window.addEventListener('load', rescaleAll);
+    window.addEventListener('resize', rescaleAll);
+    rescaleAll();
+  }
+})();
