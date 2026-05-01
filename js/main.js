@@ -22,8 +22,18 @@ window.addEventListener('resize', () => {
   }
 });
 
+// Both blocks below depend on elements that may appear AFTER this script
+// in the document — wait for DOMContentLoaded before initialising.
+function _kctReady(fn) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fn);
+  } else {
+    fn();
+  }
+}
+
 // Scale poster iframes to fit their wrapper using ResizeObserver
-(function () {
+_kctReady(function () {
   const wraps = document.querySelectorAll('.ig-html-wrap, .poster-iframe-wrap, .ig-poster-tile');
   if (!wraps.length) return;
 
@@ -56,10 +66,10 @@ window.addEventListener('resize', () => {
     window.addEventListener('resize', rescaleAll);
     rescaleAll();
   }
-})();
+});
 
 // Poster modal — opens any element with [data-poster-src] in a centered iframe
-(function () {
+_kctReady(function () {
   const modal = document.getElementById('poster-modal');
   if (!modal) return;
 
@@ -129,4 +139,4 @@ window.addEventListener('resize', () => {
     if (modal.classList.contains('active') && e.key === 'Escape') close();
   });
   window.addEventListener('resize', () => { if (current) render(current); });
-})();
+});
