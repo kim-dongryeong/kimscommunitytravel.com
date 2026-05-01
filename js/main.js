@@ -62,6 +62,10 @@ _kctReady(function () {
     }
   }
 
+  function rescaleAll() {
+    wraps.forEach(wrap => applyScale(wrap, wrap.getBoundingClientRect().width));
+  }
+
   if (typeof ResizeObserver !== 'undefined') {
     const ro = new ResizeObserver(entries => {
       for (const entry of entries) {
@@ -73,13 +77,15 @@ _kctReady(function () {
     });
     wraps.forEach(wrap => ro.observe(wrap));
   } else {
-    function rescaleAll() {
-      wraps.forEach(wrap => applyScale(wrap, wrap.getBoundingClientRect().width));
-    }
     window.addEventListener('load', rescaleAll);
-    window.addEventListener('resize', rescaleAll);
     rescaleAll();
   }
+
+  // Always also listen to window resize (force re-scale even if widths match)
+  window.addEventListener('resize', rescaleAll);
+
+  // Expose a manual hook for DevTools experimentation
+  window.kctRescale = rescaleAll;
 });
 
 // Poster modal — opens any element with [data-poster-src] in a centered iframe
