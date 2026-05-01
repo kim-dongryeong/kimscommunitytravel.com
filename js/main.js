@@ -42,13 +42,24 @@ _kctReady(function () {
   function applyScale(wrap, w) {
     const iframe = wrap.querySelector('iframe');
     if (!iframe || !w) return;
-    // Prefer dimensions on the wrap (where they're defined consistently),
-    // fall back to the iframe's own dataset, then to 1080×1080.
     const posterW = Number(wrap.dataset.posterW) || Number(iframe.dataset.posterW) || 1080;
     const posterH = Number(wrap.dataset.posterH) || Number(iframe.dataset.posterH) || 1080;
     iframe.style.width  = posterW + 'px';
     iframe.style.height = posterH + 'px';
-    iframe.style.transform = `scale(${w / posterW})`;
+    const scale = w / posterW;
+    iframe.style.transform = `scale(${scale})`;
+
+    // Cover-fit: center the scaled iframe inside the wrap when the
+    // wrap's aspect ratio differs from the poster's. Opt-in via the
+    // .ig-html-wrap--center modifier.
+    if (wrap.classList.contains('ig-html-wrap--center')) {
+      const wrapRect = wrap.getBoundingClientRect();
+      iframe.style.top  = Math.round((wrapRect.height - posterH * scale) / 2) + 'px';
+      iframe.style.left = Math.round((wrapRect.width  - posterW * scale) / 2) + 'px';
+    } else {
+      iframe.style.top  = '0px';
+      iframe.style.left = '0px';
+    }
   }
 
   if (typeof ResizeObserver !== 'undefined') {
