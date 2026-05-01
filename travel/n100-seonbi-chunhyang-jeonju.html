@@ -671,18 +671,7 @@
     img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') open(gridImgs, i, 'Trip Overview'); });
   });
 
-  // Scale iframes to fit their wrapper
-  function scaleCardIframes() {
-    document.querySelectorAll('.ig-html-wrap').forEach(wrap => {
-      const iframe = wrap.querySelector('iframe');
-      if (iframe) {
-        const scale = wrap.offsetWidth / 1080;
-        iframe.style.transform = `scale(${scale})`;
-      }
-    });
-  }
-  scaleCardIframes();
-  window.addEventListener('resize', scaleCardIframes);
+  // Scale handled by main.js (scaleOneIframe / load events)
 
   document.querySelectorAll('.dest-block .photo-strip').forEach(strip => {
     const imgs  = Array.from(strip.querySelectorAll('img'));

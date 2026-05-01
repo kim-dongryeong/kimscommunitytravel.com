@@ -3,6 +3,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
+  margin: 0;
+  padding: 0;
   width: 1080px;
   height: 1080px;
   overflow: hidden;

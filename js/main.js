@@ -22,18 +22,26 @@ window.addEventListener('resize', () => {
   }
 });
 
-// Scale iframe poster previews to fit their wrapper
-function scaleCardIframes() {
-  document.querySelectorAll('.ig-html-wrap, .poster-iframe-wrap').forEach(wrap => {
-    const iframe = wrap.querySelector('iframe');
-    if (!iframe) return;
-    const posterW = Number(iframe.dataset.posterW) || 1080;
-    const posterH = Number(iframe.dataset.posterH) || 1080;
-    const scale = wrap.offsetWidth / posterW;
-    iframe.style.transform = `scale(${scale})`;
-    // Keep wrapper height in sync (needed for non-square posters)
-    wrap.style.height = Math.round(posterH * scale) + 'px';
-  });
+// Scale a single iframe poster to fit its wrapper
+function scaleOneIframe(iframe) {
+  const wrap = iframe.closest('.ig-html-wrap, .poster-iframe-wrap');
+  if (!wrap) return;
+  const posterW = Number(iframe.dataset.posterW) || 1080;
+  const posterH = Number(iframe.dataset.posterH) || 1080;
+  const w = wrap.getBoundingClientRect().width;
+  if (!w) return;
+  const scale = w / posterW;
+  iframe.style.transform = `scale(${scale})`;
+  wrap.style.height = Math.round(posterH * scale) + 'px';
 }
-scaleCardIframes();
+
+function scaleCardIframes() {
+  document.querySelectorAll('.ig-html-wrap iframe, .poster-iframe-wrap iframe').forEach(scaleOneIframe);
+}
+
+// Re-scale every iframe when it finishes loading (reliable timing)
+document.querySelectorAll('.ig-html-wrap iframe, .poster-iframe-wrap iframe').forEach(iframe => {
+  iframe.addEventListener('load', () => scaleOneIframe(iframe));
+});
+
 window.addEventListener('resize', scaleCardIframes);
