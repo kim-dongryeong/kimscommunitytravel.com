@@ -42,10 +42,13 @@ _kctReady(function () {
   function applyScale(wrap, w) {
     const iframe = wrap.querySelector('iframe');
     if (!iframe || !w) return;
-    const posterW = Number(iframe.dataset.posterW) || 1080;
-    const posterH = Number(iframe.dataset.posterH) || 1080;
-    const scale = w / posterW;
-    iframe.style.transform = `scale(${scale})`;
+    // Prefer dimensions on the wrap (where they're defined consistently),
+    // fall back to the iframe's own dataset, then to 1080×1080.
+    const posterW = Number(wrap.dataset.posterW) || Number(iframe.dataset.posterW) || 1080;
+    const posterH = Number(wrap.dataset.posterH) || Number(iframe.dataset.posterH) || 1080;
+    iframe.style.width  = posterW + 'px';
+    iframe.style.height = posterH + 'px';
+    iframe.style.transform = `scale(${w / posterW})`;
   }
 
   if (typeof ResizeObserver !== 'undefined') {
