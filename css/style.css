@@ -1109,6 +1109,7 @@ p { color: var(--mid); line-height: 1.7; }
   cursor: pointer;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+.ig-html-wrap--tall { aspect-ratio: 4/5; }
 .ig-html-wrap:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 32px rgba(0,0,0,0.28);
