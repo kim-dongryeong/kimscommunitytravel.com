@@ -34,7 +34,7 @@ function _kctReady(fn) {
 
 // Scale poster iframes to fit their wrapper using ResizeObserver
 _kctReady(function () {
-  const wraps = document.querySelectorAll('.ig-html-wrap, .poster-iframe-wrap, .ig-poster-tile');
+  const wraps = document.querySelectorAll('.ig-html-wrap, .poster-iframe-wrap, .ig-poster-tile, .trip-hero-poster');
   if (!wraps.length) return;
 
   const lastW = new WeakMap();
@@ -138,6 +138,15 @@ _kctReady(function () {
       open(idx);
     });
   });
+
+  // Hero poster on the trip page → opens the same modal at index 0
+  const hero = document.getElementById('trip-hero-poster');
+  if (hero && triggers.length) {
+    hero.addEventListener('click', e => {
+      e.preventDefault();
+      open(0);
+    });
+  }
 
   closeBtn.addEventListener('click', close);
   prevBtn.addEventListener('click', prev);

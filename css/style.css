@@ -810,6 +810,36 @@ p { color: var(--mid); line-height: 1.7; }
   margin-bottom: 32px;
   display: block;
 }
+
+/* Poster as the hero — clickable, square, capped width, centered */
+.trip-hero-poster {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 32px;
+  border-radius: var(--r);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.trip-hero-poster:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.28);
+}
+.trip-hero-poster iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1080px;
+  border: none;
+  pointer-events: none;
+  transform-origin: top left;
+  display: block;
+}
 .trip-photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
