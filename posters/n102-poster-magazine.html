@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kim's Community Travel — June Issue</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap'); * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background: #2a2a28;
+                font-family: 'Inter',sans-serif;
+            }
+
+            .poster {
+                width: 1080px;
+                height: 1080px;
+                position: relative;
+                overflow: hidden;
+                background: #F5EFE4;
+                box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+            }
+
+            /* Magazine top bar */
+            .masthead {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 10;
+                padding: 38px 60px 26px;
+                border-bottom: 1.5px solid #1a1a1a;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #F5EFE4;
+            }
+
+            .mag-title {
+                font-family: 'DM Serif Display',serif;
+                font-size: 48px;
+                font-weight: 400;
+                color: #1a1a1a;
+                letter-spacing: -1px;
+                line-height: 0.95;
+            }
+
+            .mag-meta {
+                text-align: right;
+                font-family: 'Inter',sans-serif;
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: #1a1a1a;
+                line-height: 1.6;
+            }
+
+            .mag-meta .issue {
+                color: #4CAF82;
+            }
+
+            /* Hero photo (large, dominant) */
+            .hero {
+                position: absolute;
+                top: 135px;
+                left: 60px;
+                right: 60px;
+                height: 560px;
+                overflow: hidden;
+                z-index: 2;
+            }
+
+            .hero img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+            /* Dark overlay so text is always readable over the photo */
+            .hero::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    135deg,
+                    rgba(0,0,0,0.55) 0%,
+                    rgba(0,0,0,0.30) 50%,
+                    rgba(0,0,0,0.50) 100%
+                );
+                z-index: 3;
+            }
+
+            /* Cover feature title */
+            .feature-block {
+                position: absolute;
+                top: 175px;
+                left: 90px;
+                z-index: 6;
+                color: #F5EFE4;
+                max-width: 560px;
+                text-shadow: 0 2px 16px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.5);
+            }
+
+            .feature-tag {
+                font-family: 'Inter',sans-serif;
+                font-size: 29px;
+                font-weight: 700;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                color: #FAEEDA;
+                padding: 8px 16px;
+                background: #4CAF82;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+
+            .feature-title {
+                font-family: 'DM Serif Display',serif;
+                font-size: 170px;
+                font-weight: 400;
+                line-height: 0.85;
+                letter-spacing: -6px;
+                color: #F5EFE4;
+            }
+
+            .feature-title em {
+                font-style: italic;
+                color: #FAC775;
+            }
+
+            .feature-sub {
+                font-family: 'Cormorant Garamond',serif;
+                font-style: italic;
+                font-size: 44px;
+                font-weight: 400;
+                margin-top: 16px;
+                line-height: 1.2;
+                color: #F5EFE4;
+            }
+            .feature-types {
+                margin-top: 44px;
+                font-family: 'Inter', sans-serif;
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: rgba(245,239,228,1);
+                text-shadow: 0px 0px 1px rgb(255 255 255);
+            }
+            .feature-types span {
+                color: #FAC775;
+                margin: 0 8px;
+            }
+
+            /* Cover lines on the right side, magazine style */
+            .coverlines {
+                position: absolute;
+                top: 175px;
+                right: 90px;
+                z-index: 6;
+                text-align: right;
+                color: #F5EFE4;
+                text-shadow: 0 2px 16px rgba(0,0,0,0.8);
+            }
+
+            .coverline {
+                margin-bottom: 18px;
+                text-shadow: 0 0 4px rgb(0 0 0), 0 0 20px rgba(0,0,0,0.9);
+            }
+
+            .coverline .num {
+                font-family: 'DM Serif Display',serif;
+                font-style: italic;
+                font-size: 42px;
+                font-weight: 400;
+                color: #FAC775;
+                line-height: 1;
+                display: block;
+            }
+
+            .coverline .text {
+                font-family: 'Inter',sans-serif;
+                font-size: 31px;
+                font-weight: 600;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+                margin-top: 4px;
+                line-height: 1.25;
+                color: #F5EFE4;
+            }
+
+            /* Bottom area: editorial info + photo strip */
+            .editorial {
+                position: absolute;
+                top: 710px;
+                left: 60px;
+                right: 60px;
+                bottom: 60px;
+                z-index: 5;
+                color: #1a1a1a;
+            }
+
+            .ed-headline {
+                font-family: 'DM Serif Display',serif;
+                font-size: 44px;
+                font-weight: 400;
+                line-height: 1.05;
+                color: #1a1a1a;
+                margin-bottom: 18px;
+                letter-spacing: -0.5px;
+            }
+
+            .ed-headline em {
+                font-style: italic;
+                color: #4CAF82;
+            }
+
+            .ed-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr) 1.4fr;
+                gap: 18px;
+                height: 170px;
+            }
+
+            .ed-thumb {
+                position: relative;
+                overflow: hidden;
+                background: #1a1a1a;
+            }
+
+            .ed-thumb img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .ed-thumb .caption {
+                position: absolute;
+                bottom: 10px;
+                left: 12px;
+                color: #F5EFE4;
+                font-family: 'Inter',sans-serif;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+            }
+
+            .ed-thumb::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7) 100%);
+            }
+
+            .ed-info {
+                background: #1a1a1a;
+                color: #F5EFE4;
+                padding: 20px 22px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .ed-info .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+
+            .ed-info .label {
+                font-family: 'Inter',sans-serif;
+                font-size: 8px;
+                font-weight: 600;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+                color: #FAC775;
+            }
+
+            .ed-info .val {
+                font-family: 'DM Serif Display',serif;
+                font-size: 27px;
+                font-weight: 400;
+                color: #F5EFE4;
+                line-height: 1.2;
+                margin-top: 3px;
+            }
+
+            .ed-info hr {
+                border: none;
+                border-top: 1px solid rgba(245,239,228,0.2);
+                margin: 6px 0;
+            }
+
+            .ed-info .price {
+                font-family: 'DM Serif Display',serif;
+                font-size: 48px;
+                font-weight: 400;
+                color: #FAC775;
+                line-height: 1;
+            }
+
+            .ed-info .price small {
+                font-size: 24px;
+                vertical-align: top;
+                margin-right: 2px;
+            }
+
+            /* Footer strip */
+            .foot {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 10px 60px;
+                border-top: 1.5px solid #1a1a1a;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #F5EFE4;
+                font-family: 'Inter',sans-serif;
+                font-size: 19px;
+                font-weight: 600;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: #1a1a1a;
+            }
+
+            .foot .handle {
+                color: #4CAF82;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="poster">
+            <!-- Magazine masthead -->
+            <div class="masthead">
+                <div class="mag-title">
+                    Kim's<br>
+                    <span style="font-style:italic">Community</span>
+                </div>
+                <div class="mag-meta">
+                    <div class="issue">🚌 Bus · 🛏️ Accommodation · 🍱 Food<br>🦄 All Included</div>
+                    <div>Vol. 102 · The Festival Issue</div>
+                </div>
+            </div>
+            <!-- Hero photo with overlaid feature -->
+            <div class="hero">
+                <img src="/images/destinations/chungju-dive-festival/04.jpg" alt="K-pop stage at night">
+            </div>
+            <!-- Feature title overlay -->
+            <div class="feature-block">
+                <div class="feature-tag">A Trip on Us</div>
+                <div class="feature-title">
+                    <em>Dive!</em>
+                </div>
+                <div class="feature-sub">Two festivals, one K-pop night, one summer weekend.</div>
+                <div class="feature-types">🥁 Pumba<span>·</span><br>🎤 K-pop<span>·</span><br>⛩️ Temple<span>·</span><br>🏝️ Island<span>·</span><br>🐟 Aquarium</div>
+            </div>
+            <!-- Right-side cover lines (numbered like a magazine TOC) -->
+            <div class="coverlines">
+                <div class="coverline">
+                    <span class="num">01</span>
+                    <div class="text">Ganghwa<br>Island Village</div>
+                </div>
+                <div class="coverline">
+                    <span class="num">02</span>
+                    <div class="text">Eumseong<br>Pumba Festival</div>
+                </div>
+                <div class="coverline">
+                    <span class="num">03</span>
+                    <div class="text">Chungju<br>K-pop Dive</div>
+                </div>
+            </div>
+            <!-- Editorial section -->
+            <div class="editorial">
+                <div class="ed-headline">
+                    A festival weekend by the river, <em>fully covered</em>
+                    .<br>Just bring yourself, and €10.
+                </div>
+                <div class="ed-grid">
+                    <div class="ed-thumb">
+                        <img src="/images/destinations/ganghwa-doraemi-village/02.jpg" alt="Rice paddies on Ganghwa Island">
+                        <div class="caption">Ganghwa</div>
+                    </div>
+                    <div class="ed-thumb">
+                        <img src="/images/destinations/chungju-mireukdaewonji/01.jpg" alt="Stone Buddha at Mireukdaewonji">
+                        <div class="caption">Mireukdaewonji</div>
+                    </div>
+                    <div class="ed-thumb">
+                        <img src="/images/destinations/chungju-market/01.jpg" alt="Chungju traditional market">
+                        <div class="caption">Chungju</div>
+                    </div>
+                    <div class="ed-info">
+                        <div>
+                            <div class="row">
+                                <div class="label">When</div>
+                            </div>
+                            <div class="val">June 13–14, 2026</div>
+                        </div>
+                        <hr>
+                        <div>
+                            <div class="row">
+                                <div class="label">From</div>
+                            </div>
+                            <div class="val">Seoul</div>
+                        </div>
+                        <hr>
+                        <div class="row" style="align-items:flex-end">
+                            <div>
+                                <div class="label">Admin fee</div>
+                                <div class="price">
+                                    <small>€</small>
+                                    10
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="foot">
+                <div>🇰🇷 Government-Sponsored Cultural Trip</div>
+                <div class="handle">@kims_community_travel</div>
+            </div>
+        </div>
+    </body>
+</html>
