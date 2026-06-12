@@ -11,6 +11,10 @@ not photos of the Chungju Dive Festival itself.
 - `ganghwa-doraemi-village/04.jpg` — Agricultural Implements in Ganghwa Island by Nt (CC0) — https://commons.wikimedia.org/w/index.php?curid=158981880
 - `ganghwa-doraemi-village/05.jpg` — 강화 갯벌.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:강화_갯벌.jpg
 
+## Eumseong — Mitasa Temple (representative forest-trail imagery)
+- `mitasa-temple/01.jpg` — Wooden staircase steps in the forest of Hallasan Park Eorimok Trail at dusk on Jeju Island in South Korea.jpg, Wikimedia Commons (CC BY-SA) — https://commons.wikimedia.org/wiki/File:Wooden_staircase_steps_in_the_forest_of_Hallasan_Park_Eorimok_Trail_at_dusk_on_Jeju_Island_in_South_Korea.jpg
+- `mitasa-temple/02.jpg` — 국립수목원 숲생태 관찰로 (The forest eco-trail in the Korea National Arboretum).jpg, Wikimedia Commons (CC BY-SA) — https://commons.wikimedia.org/wiki/File:국립수목원_숲생태_관찰로_(The_forest_eco-trail_in_the_Korea_National_Arboretum).jpg
+
 ## Chungju — Dive Festival (representative K-pop stage imagery)
 - `chungju-dive-festival/01.jpg` — GOT7 performing at Dream Concert 2015.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:GOT7_performing_at_Dream_Concert_2015.jpg
 - `chungju-dive-festival/02.jpg` — Girls' Generation at Dream Concert 2013.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Girls'_Generation_at_Dream_Concert_2013.jpg
