@@ -12,7 +12,7 @@ not photos of the Chungju Dive Festival itself.
 - `ganghwa-doraemi-village/05.jpg` — 강화 갯벌.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:강화_갯벌.jpg
 
 ## Eumseong — Mitasa Temple
-- `mitasa-temple/01.jpg` – `14.jpg` — collected from the web by the trip organizer (sources include
+- `mitasa-temple/01.jpg` – `15.jpg` — collected from the web by the trip organizer (sources include
   Korea Tourism Organization promotional photos and local press/blog imagery; rights not individually
   verified — used at the publisher's discretion for tour promotion of the visited venue)
 
