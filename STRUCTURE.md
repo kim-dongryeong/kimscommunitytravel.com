@@ -36,6 +36,7 @@ A static site deployed via GitHub Pages. No build step. Edit, commit, push.
 │
 └── images/
     ├── destinations/                           # ★ REUSABLE across trips ★
+    │   ├── DESTINATIONS.md                     # ★ 한글 ↔ English folder dictionary ★
     │   ├── buseoksa-temple/
     │   │   ├── 01.jpg ... 15.jpg               # Numbered photo strip
     │   │   └── buseoksa-stairs.jpg             # Named hero / specialty shots
@@ -69,6 +70,10 @@ Every modern trip has a sequential code prefix `nXX-`:
 - Photos inside a destination folder:
   - `01.jpg`, `02.jpg`, ... — ordered photo strip / gallery (zero-padded 2 digits)
   - `<descriptive-name>.jpg` — heroes, posters, specialty shots (e.g. `buseoksa-stairs.jpg`)
+- **Korean ↔ English lookup:** `images/destinations/DESTINATIONS.md` maps every folder
+  to its Korean name and common aliases (e.g. 미륵대원지 → `chungju-mireukdaewonji`).
+  When searching for a destination by Korean name, check the dictionary first.
+  When CREATING a destination folder, add its row in the same commit.
 
 ---
 
