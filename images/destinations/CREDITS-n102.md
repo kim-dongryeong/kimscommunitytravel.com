@@ -48,9 +48,10 @@ not photos of the Chungju Dive Festival itself.
 ## Chungju — Market (generic Korean market imagery)
 - `chungju-market/01.jpg` — Traditional South Korean Market by Luke Hoagland (CC BY) — https://www.flickr.com/photos/31116845@N07/3050490720
 
-## Chungju — Aquarium (Korean freshwater fish, photographed at COEX Aquarium)
-- `chungju-aquarium/01.jpg` — Odontobutis platycephala COEX1.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Odontobutis_platycephala_COEX1.jpg
-- `chungju-aquarium/02.jpg` — Nipponocypris temminckii COEX1.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Nipponocypris_temminckii_COEX1.jpg
+## Chungju — Aquarium
+- `chungju-aquarium/01.jpg` – `17.jpg` — collected from the web by the trip organizer (aquarium
+  official Instagram / blog imagery; rights not individually verified — used at the publisher's
+  discretion for tour promotion of the visited venue). Former COEX stand-in photos removed.
 
 ## Chungju — Mokgye Naru (Namhangang riverside imagery, photographed near Yangpyeong)
 - `mokgye-naru/01.jpg` — sunset 17:20PM *Yangpyeong by Katsujiro Maekawa (CC0) — https://www.flickr.com/photos/140296773@N07/54102507093
