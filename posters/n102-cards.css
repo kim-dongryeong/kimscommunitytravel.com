@@ -214,3 +214,49 @@ html, body {
 }
 .step .t { font-size: 40px; font-weight: 600; color: var(--cream); line-height: 1.25; }
 .step .t small { display: block; font-size: 26px; font-weight: 500; color: rgba(245,239,228,0.55); margin-top: 6px; }
+
+/* ── Destination cards (photo grid + text) ── */
+.dest-kicker {
+  display: inline-block;
+  align-self: flex-start;
+  background: #4CAF82;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin-bottom: 26px;
+}
+.dest-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 78px;
+  line-height: 1.0;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+}
+.dest-korean {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 38px;
+  color: rgba(26,26,26,0.6);
+  margin-top: 14px;
+}
+.dgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 430px 200px;
+  gap: 14px;
+  margin-top: 38px;
+}
+.dgrid--single { grid-template-rows: 630px; }
+.dgrid .ph { overflow: hidden; background: #1a1a1a; }
+.dgrid .ph--main { grid-column: 1 / -1; }
+.dgrid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dest-desc {
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(26,26,26,0.78);
+  margin-top: 34px;
+}
