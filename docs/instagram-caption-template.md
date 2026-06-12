@@ -8,7 +8,11 @@ in Google Drive: `Tour08 & KCT/[NXX] <trip name> <dates>/홍보/nXX-instagram-ca
 
 1. **≤ 2,200 characters** (Instagram's caption limit — count CHARACTERS with `len()`,
    not bytes; Korean and emoji are multi-byte).
-2. **Every hashtag needs its `#`.** (A past post shipped with bare words —
+2. **Maximum 5 hashtags, most important first.** Instagram only honors the first 5 —
+   anything beyond is dead text. Priority order: audience tags
+   (#exchangestudentsinKorea, #internationalstudentsinkorea, #foreignersinKorea)
+   first, then 1–2 trip-specific hooks (#freetrip, #kpop, ...).
+   **Every hashtag needs its `#`.** (A past post shipped with bare words —
    `KimCommunityHouse StudyAbroadKorea ...` — because the `#` were lost. Verify by
    counting `#` against the tag list.)
 3. **Meeting time = 15 minutes before departure** (sometimes 20 — confirm with the
@@ -59,8 +63,8 @@ in Google Drive: `Tour08 & KCT/[NXX] <trip name> <dates>/홍보/nXX-instagram-ca
 
 ⚠️ <urgency line: limited seats / deadline>
 
-#exchangestudentsinKorea #foreignersinKorea #internationalstudentsinkorea
-#expatsinkorea #koreaexpats <+ ~5–10 trip-specific tags>
+#<audience tag 1> #<audience tag 2> #<audience tag 3> #<hook tag 1> #<hook tag 2>
+(exactly 5 — see rule 2)
 ```
 
 ## Reference examples

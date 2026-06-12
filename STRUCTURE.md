@@ -141,6 +141,12 @@ Use **relative** paths without leading slash:
 
 ## Posters & cards
 
+### Format (standing rule, June 2026)
+All NEW posters and cards are **4:5 — 1080×1350** (Instagram portrait). 3:4 (1080×1440)
+is an acceptable alternative if we switch later. **Do not create new 1:1 square posters**
+— existing square files (N100–N102 magazine covers) are legacy. Carousel slides must all
+share one aspect ratio; `data-poster-h` is 1350 for 4:5.
+
 ### Why iframes?
 Each poster is its own standalone HTML file (so it renders properly when opened directly). Trip pages and the home page embed them via scaled iframes inside `.ig-html-wrap`, `.poster-iframe-wrap`, or `.trip-hero-poster`. The shared scaler in `js/main.js` (`ResizeObserver`) handles fitting them to their wrapper.
 
