@@ -16,6 +16,12 @@ not photos of the Chungju Dive Festival itself.
   Korea Tourism Organization promotional photos and local press/blog imagery; rights not individually
   verified — used at the publisher's discretion for tour promotion of the visited venue)
 
+## Eumseong — Pumba Festival
+- `eumseong-pumba-festival/01.jpg` – `20.jpg` — collected from the web by the trip organizer
+  (festival promotional / press / Instagram card-news imagery, incl. official festival promo cards;
+  rights not individually verified — used at the publisher's discretion for tour promotion of the
+  visited festival)
+
 ## Chungju — Dive Festival (representative K-pop stage imagery)
 - `chungju-dive-festival/01.jpg` — GOT7 performing at Dream Concert 2015.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:GOT7_performing_at_Dream_Concert_2015.jpg
 - `chungju-dive-festival/02.jpg` — Girls' Generation at Dream Concert 2013.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Girls'_Generation_at_Dream_Concert_2013.jpg
