@@ -72,7 +72,7 @@
                 top: 135px;
                 left: 60px;
                 right: 60px;
-                height: 700px;
+                height: 620px;
                 overflow: hidden;
                 z-index: 2;
             }
@@ -199,7 +199,7 @@
             /* Bottom area: editorial info + photo strip */
             .editorial {
                 position: absolute;
-                top: 875px;
+                top: 795px;
                 left: 60px;
                 right: 60px;
                 bottom: 60px;
@@ -226,26 +226,35 @@
                 display: grid;
                 grid-template-columns: repeat(3, 1fr) 1.4fr;
                 gap: 18px;
-                height: 170px;
+                height: 205px;
             }
 
             /* Big FREE callout band (fills the extra 4:5 space) */
             .free-callout {
-                margin-top: 18px;
+                margin-top: 14px;
                 background: #4CAF82;
                 color: #F5EFE4;
                 text-align: center;
-                padding: 20px;
+                padding: 22px 20px 22px;
                 font-family: 'DM Serif Display', serif;
-                font-size: 36px;
-                line-height: 1.1;
                 letter-spacing: -0.5px;
+            }
+            .free-callout .fc-line1 {
+                font-size: 56px;
+                line-height: 1.05;
                 white-space: nowrap;
             }
-            .free-callout em {
+            .free-callout .fc-line1 em {
                 font-style: italic;
                 color: #FAC775;
-                font-size: 44px;
+                font-size: 66px;
+            }
+            .free-callout .fc-line2 {
+                font-family: 'Cormorant Garamond', serif;
+                font-style: italic;
+                font-size: 40px;
+                margin-top: 8px;
+                color: rgba(245,239,228,0.95);
             }
 
             .ed-thumb {
@@ -444,7 +453,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="free-callout">It's <em>FREE.</em> Completely free — just sign up &amp; show up&nbsp;🎉</div>
+                <div class="free-callout">
+                    <div class="fc-line1">It's <em>FREE.</em> Completely free.</div>
+                    <div class="fc-line2">Just sign up &amp; show up&nbsp;🎉</div>
+                </div>
             </div>
             <!-- Footer -->
             <div class="foot">
