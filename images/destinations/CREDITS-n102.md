@@ -31,9 +31,10 @@ not photos of the Chungju Dive Festival itself.
 - `chungju-mireukdaewonji/05.jpg` — Mireukdaewonji Stone lantern.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Mireukdaewonji_Stone_lantern.jpg
 - `chungju-mireukdaewonji/06.jpg` — 미륵대원지 2.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:미륵대원지_2.jpg
 
-## Chungju — Coffee Museum (generic coffee imagery)
-- `chungju-coffee-museum/01.jpg` — Coffee Beans by 威爾家 ♥ Will Family (CC BY-SA) — https://www.flickr.com/photos/37657742@N05/4527989531
-- `chungju-coffee-museum/02.jpg` — Caffe Latte - The Maling Room by avlxyz (CC BY-SA) — https://www.flickr.com/photos/10559879@N00/2427469950
+## Chungju — Coffee Museum
+- `chungju-coffee-museum/01.jpg` – `10.jpg` — collected from the web by the trip organizer (museum
+  promotional / press / blog imagery; rights not individually verified — used at the publisher's
+  discretion for tour promotion of the visited venue)
 
 ## Chungju — Market (generic Korean market imagery)
 - `chungju-market/01.jpg` — Traditional South Korean Market by Luke Hoagland (CC BY) — https://www.flickr.com/photos/31116845@N07/3050490720
