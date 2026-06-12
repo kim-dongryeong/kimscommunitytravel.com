@@ -53,6 +53,8 @@ not photos of the Chungju Dive Festival itself.
   official Instagram / blog imagery; rights not individually verified — used at the publisher's
   discretion for tour promotion of the visited venue). Former COEX stand-in photos removed.
 
-## Chungju — Mokgye Naru (Namhangang riverside imagery, photographed near Yangpyeong)
-- `mokgye-naru/01.jpg` — sunset 17:20PM *Yangpyeong by Katsujiro Maekawa (CC0) — https://www.flickr.com/photos/140296773@N07/54102507093
-- `mokgye-naru/02.jpg` — sunset 17:58PM *Yangpyeong by Katsujiro Maekawa (CC0) — https://www.flickr.com/photos/140296773@N07/55253813411
+## Chungju — Mokgye Naru
+- `mokgye-naru/01.jpg` – `24.jpg` — collected from the web by the trip organizer (blog visit-album
+  imagery, SAM_xxxx camera series; rights not individually verified — used at the publisher's
+  discretion for tour promotion of the visited site). Two byte-identical duplicates excluded;
+  former Yangpyeong sunset stand-ins removed.
