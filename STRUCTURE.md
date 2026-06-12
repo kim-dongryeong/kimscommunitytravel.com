@@ -16,6 +16,9 @@ A static site deployed via GitHub Pages. No build step. Edit, commit, push.
 ├── CNAME                       # GitHub Pages custom domain
 ├── favicon.png / favicon.svg / apple-touch-icon.png
 │
+├── docs/
+│   └── instagram-caption-template.md  # Caption format for trip posts
+│
 ├── css/
 │   └── style.css               # Single global stylesheet
 ├── js/
@@ -114,6 +117,25 @@ Use **relative** paths without leading slash:
    - Copy an existing poster from `posters/` and adapt content.
    - For destination cards, copy `posters/n100-card-01-buseoksa.html` as a template and update text/photo refs.
    - Wire them into the trip page's `<div class="ig-html-grid">` block, with `data-poster-src`, `data-poster-w`, `data-poster-h`, `data-poster-title`.
+6. **Instagram caption**: follow `docs/instagram-caption-template.md`; save the finished
+   caption to the trip's Drive folder under `홍보/nXX-instagram-caption.txt`.
+
+---
+
+## Trip conventions
+
+- **Meeting time**: 15 minutes before departure (occasionally 20 — confirm per trip).
+  Default meeting point: **Yongsan Station Exit 1**. Standard wording everywhere
+  (sidebar, schedule, captions):
+  - Sidebar row: `07:15, Yongsan Station Exit 1` + small text `Depart 07:30 · Exact pin announced individually`
+  - Schedule list: `07:15 — Meet at Yongsan Station Exit 1` then `07:30 — Depart Seoul`
+- **Booking**: Google Form linked from the trip page (N100–N102 shared
+  `https://forms.gle/UqeBK9evF6sRz1oh8`); participants must verify their name on the namelist.
+- **Pricing patterns**: government-sponsored trips are either free or a small admin fee
+  (historically 7–10 EUR for students / 20 EUR other foreigners). Emphasize FREE hard
+  when it applies.
+- **Audience**: foreigners & international students only; all public content in English,
+  with Korean names alongside (see `images/destinations/DESTINATIONS.md`).
 
 ---
 
