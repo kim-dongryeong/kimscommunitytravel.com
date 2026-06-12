@@ -36,6 +36,9 @@ not photos of the Chungju Dive Festival itself.
 - `chungju-mireukdaewonji/04.jpg` — Mireukdaewonji Three-story Stone Pagoda.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Mireukdaewonji_Three-story_Stone_Pagoda.jpg
 - `chungju-mireukdaewonji/05.jpg` — Mireukdaewonji Stone lantern.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:Mireukdaewonji_Stone_lantern.jpg
 - `chungju-mireukdaewonji/06.jpg` — 미륵대원지 2.jpg, Wikimedia Commons — https://commons.wikimedia.org/wiki/File:미륵대원지_2.jpg
+- `chungju-mireukdaewonji/07.jpg` – `65.jpg` — collected from the web by the trip organizer
+  (press / blog / Naver-cafe visit-album imagery; rights not individually verified — used at the
+  publisher's discretion for tour promotion of the visited site)
 
 ## Chungju — Coffee Museum
 - `chungju-coffee-museum/01.jpg` – `10.jpg` — collected from the web by the trip organizer (museum
